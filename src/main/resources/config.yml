@@ -1,0 +1,365 @@
+# ==============================================================================
+# MoonlightVanillaSurvivalCore Configuration
+# Target: Paper 26.2 / Java 21 LTS
+# Clean-Room Architectural Implementation
+# ==============================================================================
+
+server:
+  name: "Moonlight Vanilla Survival"
+  version-target: "Paper 26.2"
+
+# Security & Compliance Safeguards
+security:
+  # When true, the plugin enforces OP status checks. The designated Owner UUID and
+  # authorized admins retain OP, while unauthorized players are revoked.
+  strict-anti-auto-op: true
+  owner-uuid: "00000000-0000-0000-0000-000000000000"
+  log-audit-events: true
+  sanitize-passwords-in-logs: true
+  plugin-hider:
+    # Set to false to allow server admins and public /plugins inspection without spoofing
+    enabled: false
+    # Server operators and staff with 'moonlight.admin' always see all real plugins
+    bypass-for-admins: true
+
+# Database Persistence Layer (HikariCP)
+database:
+  type: "SQLITE" # SQLITE or MYSQL
+  sqlite:
+    filename: "moonlight_core.db"
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    database: "moonlight"
+    username: "moonlight_user"
+    password: "CHANGE_ME"
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 3
+      connection-timeout-ms: 30000
+      idle-timeout-ms: 600000
+      max-lifetime-ms: 1800000
+
+# Teleportation Engine (Countdown & Warmup)
+teleport:
+  warmup-seconds: 3
+  cancel-on-movement: false
+  cancel-on-damage: true
+  min-damage-cancel-hearts: 5.0
+  movement-threshold: 0.15
+  messages:
+    prefix: "<gradient:#6366f1:#a855f7>[Moonlight]</gradient> "
+    warmup-start: "<yellow>Teleporting in {seconds} seconds. Teleport will only cancel if you take heavy damage (>5 hearts)!</yellow>"
+    warmup-cancelled-damage: "<red>Teleportation cancelled because you took heavy damage (>5 hearts)!</red>"
+    teleport-success: "<green>Teleported safely!</green>"
+
+# Homes Module
+homes:
+  max-homes-per-player: 5
+  warmup-seconds: 3
+  prevent-sethome-in-air: true
+  teleport-even-if-dangerous: true
+  prevent-suffocation-top-block: true
+  allow-nether-homes: true
+  allow-end-homes: true
+  gui-enabled: true
+  gui-title: "<dark_purple><bold>Moonlight Homes</bold></dark_purple>"
+
+# Scoreboard Subsystem
+scoreboard:
+  enabled: true
+  # Scoreboard Title: Displays the Moonlight SMP logo image from MoonlightUltimatePack.zip (\uE001)
+  title: "\uE001"
+  # Universal Fallback Title: Displayed for players who prefer clean text (/sb title)
+  fallback-title: "<gradient:#00d2ff:#3a7bd5><bold>✦ MOONLIGHT SMP ✦</bold></gradient>"
+  # Automatically displays fallback title if player hasn't loaded pack yet or is on Bedrock/mobile
+  smart-title-fallback: true
+  # Completely removes the red vanilla numbers (7, 6, 5...) from the right side of the sidebar
+  hide-numbers: true
+  update-interval-ticks: 20
+
+# Resource Pack Subsystem
+# Sends server resource pack with exact SHA-1 checksum so Minecraft clients store it in
+# temporary cache files (downloads/<hash>) and NEVER download every time they join!
+resource-pack:
+  enabled: true
+  url: "https://cdn.minepack.fr/pack/b3edc890-ab27-48d8-83bb-27f23d503b1d"
+  # 40-character SHA-1 checksum matching hosted pack for instant client caching
+  hash: "85b08b308d924c35b33d0434827ac29669d30ac7"
+  required: false
+  # Delay in ticks before sending pack prompt (50 ticks = 2.5s allows mobile launchers to finish terrain load)
+  send-delay-ticks: 50
+  prompt: "<gradient:#00d2ff:#3a7bd5><bold>✦ MOONLIGHT SMP ✦</bold></gradient>\n<gray>Load custom 3D weapon wraps and scoreboard logo!</gray>"
+  lines:
+    - "<gray>Player: </gray><white>{player}</white>"
+    - "<gray>Playtime: </gray><yellow>{playtime}</yellow>"
+    - "<gray>Kills: </gray><green>{kills}</green>"
+    - "<gray>Deaths: </gray><red>{deaths}</red>"
+    - "<gray>Ping: </gray>{ping}"
+    - "<dark_gray>-----------------</dark_gray>"
+    - "<gradient:#38bdf8:#1d4ed8>www.moonlightsmp.info</gradient>"
+
+# Chat & Messaging Subsystem (100% Compatible with LuckPerms, LPC, InteractiveChat, DiscordSRV, Dynmap, Essentials)
+chat:
+  enabled: true
+  # Formats for /msg and /reply
+  msg-format-sender: "<gray>[</gray><light_purple>You</light_purple><dark_gray> -></dark_gray> <green>{target}</green><gray>]</gray> <gold>{message}</gold>"
+  msg-format-receiver: "<gray>[</gray><green>{sender}</green><dark_gray> -></dark_gray> <light_purple>You</light_purple><gray>]</gray> <gold>{message}</gold>"
+
+# Community & Social Web Links (/weblink, /discord)
+links:
+  website: "https://www.moonlightsmp.info/"
+  discord: "https://discord.gg/BVEa5UbCHg"
+
+# ==============================================================================
+# YouTube Creators & Server YouTubers (/yt, /youtube, /youtubers)
+# ==============================================================================
+youtube:
+  # Official Moonlight SMP Content Creators & YouTubers
+  # Add channels in-game via: /yt add <name> <url> [description] (OP only)
+  # Remove channels in-game via: /yt remove <name> (OP only)
+  creators: []
+
+# ==============================================================================
+# Proxy & Network Forwarding Settings (Velocity & Normal Paper)
+# ==============================================================================
+proxy:
+  # Mode: 'auto' (Auto-detects Velocity modern forwarding or Standalone Paper),
+  #       'velocity' (Velocity proxy network with modern forwarding),
+  #       'bungeecord' (Legacy BungeeCord IP-forwarding),
+  #       'standalone' (Standard single-instance Normal Paper)
+  mode: "auto"
+  # Hub server name to redirect players when typing /hub or /lobby
+  hub-server: "lobby"
+  # Velocity Modern Forwarding validation & security
+  velocity:
+    # Set to true to enforce that only players arriving through Velocity can join
+    enforce-velocity-secret: false
+    secret: "YOUR_VELOCITY_SECRET"
+  # Network commands provided by Moonlight
+  commands:
+    enable-hub-command: true
+    enable-server-command: true
+
+# ==============================================================================
+# 3D Weapon Wraps Configuration (Blades of Majestica)
+# ==============================================================================
+wraps:
+  cooldown:
+    enabled: true
+    # Universal cooldown for everyone: 24 Hours (86400 seconds)
+    # The applied wrap stays permanent on the weapon forever!
+    default-seconds: 86400
+    # OPs, Admins, and moonlight.wraps.bypass.cooldown have NO cooldown (0s)
+
+# ==============================================================================
+# Spawn & Multiverse-Core World Location Subsystem
+# ==============================================================================
+spawn:
+  # When true, guarantees that every player spawns at /spawn upon joining
+  teleport-on-join: true
+  warmup-seconds: 3
+
+multiverse:
+  # When true, teleporting to a world (/mv tp, /mvtp) teleports to the player's
+  # latest recorded location in that world instead of the world's spawn point.
+  resume-latest-location: true
+
+# ==============================================================================
+# Server Rules Configuration (/rules Written Book)
+# ==============================================================================
+rules:
+  title: "Moonlight Rules"
+  author: "Moonlight SMP Staff"
+  pages:
+    - |
+      <dark_blue><bold>MOONLIGHT SMP</bold></dark_blue>
+      <blue><bold>Official Rulebook</bold></blue>
+      <dark_gray>-----------------</dark_gray>
+      <dark_gray>Welcome to Moonlight!</dark_gray>
+      <dark_gray>Please read and follow all server rules to keep our community fair and fun.</dark_gray>
+
+      <black><bold>Table of Contents:</bold></black>
+      <dark_blue>§1.</dark_blue> <dark_gray>General Conduct</dark_gray>
+      <dark_blue>§2.</dark_blue> <dark_gray>Fair Play & Hacks</dark_gray>
+      <dark_blue>§3.</dark_blue> <dark_gray>Griefing & Claims</dark_gray>
+      <dark_blue>§4.</dark_blue> <dark_gray>Chat & Economy</dark_gray>
+      <dark_blue>§5.</dark_blue> <dark_gray>Building & Lag</dark_gray>
+      <dark_blue>§6.</dark_blue> <dark_gray>Staff & Appeals</dark_gray>
+    - |
+      <dark_blue><bold>§1. General Conduct</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <black>• Treat all players and staff with respect.</black>
+
+      <dark_red>• Zero tolerance for:</dark_red>
+      <dark_gray>- Toxicity, racism, or sexism</dark_gray>
+      <dark_gray>- Harassment, hate speech, or bullying</dark_gray>
+      <dark_gray>- Doxxing or threats</dark_gray>
+
+      <black>• Do not evade mutes or bans using alternate accounts.</black>
+
+      <black>• Follow instructions given by staff members.</black>
+    - |
+      <dark_blue><bold>§2. Fair Play & Hacks</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <dark_red><bold>Strictly Prohibited:</bold></dark_red>
+      <black>• Hacked clients or cheat mods (Fly, Speed, Killaura, Baritone, Auto-Clickers).</black>
+
+      <black>• X-Ray resource packs, mods, or coordinates exploits.</black>
+
+      <black>• Duplication bugs or exploit abuse.</black>
+
+      <dark_blue>Report all exploits immediately on Discord!</dark_blue>
+    - |
+      <dark_blue><bold>§3. Griefing & Claims</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <black>• Do not grief, destroy, or vandalize other players' builds or terrain.</black>
+
+      <black>• Respect claimed lands and personal bases.</black>
+
+      <black>• Stealing from containers, item frames, or farms without permission is forbidden.</black>
+
+      <black>• No trap-killing or spawn camping.</black>
+    - |
+      <dark_blue><bold>§4. Chat & Economy</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <black>• No spamming, flood typing, or excessive caps in public chat.</black>
+
+      <black>• No advertising other servers, discords, or paid services.</black>
+
+      <black>• Scamming players in item trades or transactions is forbidden.</black>
+
+      <dark_red>• Real Money Trading (RMT) is strictly prohibited.</dark_red>
+    - |
+      <dark_blue><bold>§5. Building & Lag</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <black>• No intentional lag machines or clock circuits designed to drop server TPS.</black>
+
+      <black>• Keep farm entity counts within reasonable limits.</black>
+
+      <dark_red>• Inappropriate, NSFW, or offensive pixel art and builds will be removed without warning.</dark_red>
+    - |
+      <dark_blue><bold>§6. Staff & Appeals</bold></dark_blue>
+      <dark_gray>-----------------</dark_gray>
+      <black>Violations will result in warnings, mutes, kicks, temp-bans, or permanent bans.</black>
+
+      <black><bold>Need Support or Appeal?</bold></black>
+      <dark_blue>Join our Discord:</dark_blue>
+      <blue>discord.gg/BVEa5UbCHg</blue>
+      <dark_gray>or run </dark_gray><dark_blue>/discord</dark_blue>
+
+      <black><bold>Official Website:</bold></black>
+      <blue>www.moonlightsmp.info</blue>
+
+      <dark_blue>Enjoy your stay on Moonlight SMP!</dark_blue>
+
+# ==============================================================================
+# Paid Supporter Ranks Configuration (/ranks, /store, /buy GUI)
+# ==============================================================================
+ranks:
+  gui-title: "▶ STORE ◀"
+  store-url: "https://www.moonlightsmp.info/"
+  tiers:
+    friendly:
+      name: "Friendly"
+      display: "<green><bold>FRIENDLY RANK</bold></green>"
+      price: "$4.99 / ₹299"
+      material: "ENCHANTED_BOOK"
+      slot: 19
+      description: "Entry supporter rank with essential quality-of-life perks."
+      permission: "moonlight.wraps.tier.friendly"
+      perks:
+        - "Friendly Prefix & Nametag"
+        - "2 Particle Cosmetic Slots"
+        - "Medieval Skinline Wraps"
+        - "10% Discount on Ingame Store Purchases"
+        - "Double Voting Rewards"
+        - "Access to <blue>/HAT</blue>"
+        - "Access to <blue>/SKIN</blue>"
+        - "Access to <blue>/WORKBENCH</blue> (Survival/OB)"
+        - "Access to <blue>/REPAIR</blue> (Survival/OB)"
+        - "1 PlayerVaults(54 Slots) (Survival/OB)"
+        - "1 Extra Home (Survival/OB)"
+    honored:
+      name: "Honored"
+      display: "<yellow><bold>HONORED RANK</bold></yellow>"
+      price: "$9.99 / ₹599"
+      material: "ENCHANTED_BOOK"
+      slot: 21
+      description: "Elevate your survival experience with advanced tools."
+      permission: "moonlight.wraps.tier.honoured"
+      perks:
+        - "Honored Prefix & Nametag"
+        - "4 Particle Cosmetic Slots"
+        - "Jungle Skinline Wraps"
+        - "20% Discount on Ingame Store Purchases"
+        - "Double Voting Rewards"
+        - "Access to <blue>/HAT</blue>"
+        - "Access to <blue>/SKIN</blue>"
+        - "Access to <blue>/WORKBENCH</blue> (Survival/OB)"
+        - "Access to <blue>/REPAIR</blue> (Survival/OB)"
+        - "2 PlayerVaults(54 Slots) (Survival/OB)"
+        - "2 Extra Home (Survival/OB)"
+    revered:
+      name: "Revered"
+      display: "<light_purple><bold>REVERED RANK</bold></light_purple>"
+      price: "$19.99 / ₹1,199"
+      material: "ENCHANTED_BOOK"
+      slot: 23
+      description: "Elite survival rank with powerful convenience perks."
+      permission: "moonlight.wraps.tier.revered"
+      perks:
+        - "Revered Prefix & Nametag"
+        - "6 Particle Cosmetic Slots"
+        - "Vinland Skinline Wraps"
+        - "30% Discount on Ingame Store Purchases"
+        - "Double Voting Rewards"
+        - "Access to <blue>/HAT</blue>"
+        - "Access to <blue>/SKIN</blue>"
+        - "Access to <blue>/WORKBENCH</blue> (Survival/OB)"
+        - "Access to <blue>/REPAIR</blue> (Survival/OB)"
+        - "Access to <blue>/CONDENSE</blue> (Survival/OB)"
+        - "3 PlayerVaults(54 Slots) (Survival/OB)"
+        - "3 Extra Home (Survival/OB)"
+        - "3 Keep XP on Death (Survival/OB)"
+    exalted:
+      name: "Exalted"
+      display: "<aqua><bold>EXALTED RANK</bold></aqua>"
+      price: "$34.99 / ₹1,999"
+      material: "ENCHANTED_BOOK"
+      slot: 25
+      description: "The ultimate prestige rank with complete access to all perks."
+      permission: "moonlight.wraps.tier.exalted"
+      perks:
+        - "Exalted Prefix & Nametag"
+        - "10 Particle Cosmetic Slots"
+        - "Cyberpunk Skinline Wraps"
+        - "40% Discount on Ingame Store Purchases"
+        - "Double Voting Rewards"
+        - "Access to <blue>/HAT</blue>"
+        - "Access to <blue>/SKIN</blue>"
+        - "Access to <blue>/WORKBENCH</blue> (Survival/OB)"
+        - "Access to <blue>/REPAIR</blue> (Survival/OB)"
+        - "Access to <blue>/CONDENSE</blue> (Survival/OB)"
+        - "5 PlayerVaults(54 Slots) (Survival/OB)"
+        - "5 Extra Home (Survival/OB)"
+        - "Keep XP on Death (Survival/OB)"
+        - "No AFK Kick"
+
+
+
+# Player Help & Handbook Subsystem (/help, /guide, /mhelp)
+help:
+  enabled: true
+  header: "<gradient:#00d2ff:#3a7bd5><bold>═══════════ MOONLIGHT SMP HELP GUIDE ═══════════</bold></gradient>"
+  welcome-message: "<gray>Please select a category below to view commands:</gray>"
+  footer: "<gradient:#00d2ff:#3a7bd5><bold>═════════════════════════════════════════════════</bold></gradient>"
+
+# ==============================================================================
+# YouTube Creators & Partner Channels (/yt, /youtube, /youtubers)
+# Add channels via /yt add <name> <url> [desc]
+# Set top priorities via /yt priority <name> <1|2|3...>
+# ==============================================================================
+youtube:
+  enabled: true
+  creators: []

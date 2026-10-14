@@ -1,0 +1,464 @@
+name: MoonlightVanillaSurvivalCore
+version: '1.0.0-SNAPSHOT'
+main: com.moonlight.vanilla.MoonlightVanillaSurvivalCore
+api-version: '1.21'
+author: MoonlightVanilla
+description: Clean-Room Vanilla Survival Core for Paper 26.2 with Homes, Bedrock Crossplay, and Audit Logging
+softdepend: [LuckPerms, LPC, InteractiveChat, DiscordSRV, ProtocolLib, PlaceholderAPI, Vault, Essentials, Geyser-Spigot, floodgate, ViaVersion, ViaBackwards, ViaRewind, Dynmap, Multiverse-Core, SuperVanish, PremiumVanish, TAB, Citizens, FancyNpcs, ServerNPC, ZNPCsPlus]
+
+commands:
+  bedrock:
+    description: Bedrock crossplay touch GUI and device info
+    aliases: [bedrockgui, mbedrock]
+    usage: /<command> [gui|info]
+  shelp:
+    description: Staff command handbook and operational guide (TrialHelper and above)
+    aliases: [staffhelp, mshelp]
+    usage: /<command> [category]
+  logs:
+    description: Deep player audit log, transaction, and snapshot inspector
+    aliases: [mlogs, auditlogs, paperlogs, log]
+    usage: /<command> <player> [DD/MM/YYYY] [HH:MM:SS]
+  sethome:
+    description: Set a personal home location
+    aliases: [msethome, esethome]
+    usage: /<command> [name]
+  home:
+    description: Teleport to a saved home location
+    aliases: [mhome, ehome]
+    usage: /<command> [name]
+  delhome:
+    description: Delete or remove a saved home location
+    aliases: [removehome, deletehome, rmhome, remhome, removehomes, delhomes, mdelhome, mremovehome]
+    usage: /<command> [name|all]
+  removehome:
+    description: Remove or delete a saved home location
+    aliases: [delhome, deletehome, rmhome, remhome, removehomes, delhomes, mremovehome, mdelhome]
+    usage: /<command> [name|all]
+  homes:
+    description: List all of your saved homes
+    usage: /<command>
+  wb:
+    description: Open a virtual workbench
+    aliases: [workbench]
+    usage: /<command>
+  hat:
+    description: Put the item in your hand on your head
+    usage: /<command>
+  repair:
+    description: Repair the item in your hand
+    usage: /<command>
+  pv:
+    description: Open your player vault
+    aliases: [playervault, vault, mpv]
+    usage: /<command> [1-5]
+  pv1:
+    description: Open Player Vault 1
+    aliases: [playervault1, vault1, mpv1]
+    usage: /<command> [player]
+  pv2:
+    description: Open Player Vault 2
+    aliases: [playervault2, vault2, mpv2]
+    usage: /<command> [player]
+  pv3:
+    description: Open Player Vault 3
+    aliases: [playervault3, vault3, mpv3]
+    usage: /<command> [player]
+  pv4:
+    description: Open Player Vault 4
+    aliases: [playervault4, vault4, mpv4]
+    usage: /<command> [player]
+  pv5:
+    description: Open Player Vault 5
+    aliases: [playervault5, vault5, mpv5]
+    usage: /<command> [player]
+  changename:
+    description: Change or reset the display nickname of a player
+    aliases: [mchangename, setname, nickplayer]
+    usage: /<command> <player> <name|reset>
+  scoreboard:
+    description: Toggle or view personal sidebar scoreboard
+    aliases: [sb, sbtoggle]
+    usage: /<command> [toggle|on|off]
+  msg:
+    description: Send a private direct message to a player
+    aliases: [w, tell, whisper, pm, m, t]
+    usage: /<command> <player> <message>
+  reply:
+    description: Quickly reply to the last player who messaged you
+    aliases: [r]
+    usage: /<command> <message>
+  hub:
+    description: Connect to network hub via Velocity or teleport to spawn in standalone Paper mode
+    aliases: [lobby]
+    usage: /<command>
+  server:
+    description: Switch backend servers via Velocity proxy or check server status
+    aliases: [switchserver]
+    usage: /<command> [server]
+  invsee:
+    description: Inspect a player's inventory live with InteractiveChat-style RPG view
+    aliases: [inv]
+    usage: /<command> <player>
+  enderchest:
+    description: Open personal ender chest or inspect a target player's ender vault live
+    aliases: [ec, echest]
+    usage: /<command> [player]
+
+  itemwarps:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwraps, itemwarp, itemwrap, wraps, wrap, mitemwarps, mitemwarp, mwraps, mwrap]
+    usage: /<command> [remove|reload]
+  itemwraps:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwarps, itemwarp, itemwrap, wraps, wrap]
+    usage: /<command> [remove|reload]
+  itemwarp:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwarps, itemwraps, itemwrap, wraps, wrap]
+    usage: /<command> [remove|reload]
+  itemwrap:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwarps, itemwraps, itemwarp, wraps, wrap]
+    usage: /<command> [remove|reload]
+  wraps:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwarps, itemwraps, itemwarp, itemwrap, wrap]
+    usage: /<command> [remove|reload]
+  wrap:
+    description: Open weapon wraps GUI to view or equip 3D weapon skins
+    aliases: [itemwarps, itemwraps, itemwarp, itemwrap, wraps]
+    usage: /<command> [remove|reload]
+
+  weblink:
+    description: View the official Moonlight SMP website link
+    aliases: [link, website, site, web]
+    usage: /<command>
+
+  discord:
+    description: Join the official Moonlight SMP Discord community
+    aliases: [dc, dclink, discordlink]
+    usage: /<command>
+
+  yt:
+    description: List official server YouTubers and content creators
+    aliases: [youtube, videos, youtubelinks, youtubers, myoutube]
+    usage: /<command> [page|add|remove|reload]
+
+  addyoutube:
+    description: Add or update a server YouTube channel link (OP only)
+    aliases: [addyt]
+    usage: /<command> <name> <channel_url> [description...]
+
+  removeyoutube:
+    description: Remove a server YouTube channel link (OP only)
+    aliases: [removeyt, delyoutube, delyt, removelink]
+    usage: /<command> <name|channel_url>
+
+  ytpriority:
+    description: Set priority position for server YouTubers (OP only)
+    aliases: [setytpriority]
+    usage: /<command> <name> <priority|reset>
+
+  help:
+    description: Moonlight SMP player guide and comprehensive command handbook
+    aliases: [mhelp, guide]
+    usage: /<command> [category]
+
+  rules:
+    description: Open the official interactive server rulebook
+    aliases: [mrules, rulebook, mrulebook]
+    usage: /<command>
+
+  rulebook:
+    description: Open the official interactive server rulebook
+    aliases: [mrulebook]
+    usage: /<command>
+
+  resourcepack:
+    description: Load or reload the server resource pack with SHA-1 cache support
+    aliases: [rp, mrp]
+    usage: /<command> [reload]
+
+  ranks:
+    description: Open interactive GUI showing all paid supporter ranks, perks, and costs
+    aliases: [rank, store, buy, paidranks, donateranks, donorranks]
+    usage: /<command> [rank]
+
+  store:
+    description: Open the official server store and ranks GUI
+    aliases: [buy, webstore]
+    usage: /<command>
+
+
+permissions:
+  moonlight.*:
+    description: Full wildcard access to all Moonlight commands and features
+    default: op
+    children:
+      moonlight.admin: true
+      moonlight.staff: true
+      moonlight.player: true
+      moonlight.features.*: true
+
+  moonlight.admin:
+    description: Master administrative access for Server Owners and Head Admins
+    default: op
+    children:
+      moonlight.core.admin: true
+      moonlight.staff: true
+      moonlight.logs.view: true
+      moonlight.audit.invsee: true
+      moonlight.audit.enderchest: true
+      moonlight.homes.unlimited: true
+      moonlight.homes.*: true
+      moonlight.noafkkick: true
+      moonlight.pv.*: true
+      moonlight.workbench: true
+      moonlight.hat: true
+      moonlight.repair: true
+      moonlight.keepxp: true
+
+  moonlight.core.admin:
+    description: Core administrator rights, /changename, and bypass strict anti-auto-op
+    default: op
+
+  moonlight.staff:
+    description: Full staff moderation bundle for Trial Helpers, Mods, and Admins
+    default: op
+    children:
+      moonlight.staff.shelp: true
+      moonlight.staff.kick: true
+      moonlight.staff.mute: true
+      moonlight.staff.unmute: true
+      moonlight.staff.ban: true
+      moonlight.staff.baninfo: true
+      moonlight.staff.chat: true
+      moonlight.staff.bypass: true
+      moonlight.audit.invsee: true
+      moonlight.audit.enderchest: true
+      moonlight.logs.view: true
+
+  moonlight.staff.shelp:
+    description: Access to /shelp staff command handbook and operational guide
+    default: op
+  moonlight.staff.kick:
+    description: Allows kicking players with /kick and viewing kick alerts
+    default: op
+  moonlight.staff.mute:
+    description: Allows muting players with /mute
+    default: op
+  moonlight.staff.unmute:
+    description: Allows unmuting players with /unmute
+    default: op
+  moonlight.staff.ban:
+    description: Allows issuing temporary bans (up to 3 days)
+    default: op
+  moonlight.staff.ban.permanent:
+    description: Allows issuing permanent bans with /ban
+    default: op
+  moonlight.staff.unban:
+    description: Allows pardoning bans with /unban
+    default: op
+  moonlight.staff.baninfo:
+    description: Allows checking ban history and live countdowns with /baninfo
+    default: op
+  moonlight.staff.bypass:
+    description: Protects staff from being muted or punished by lower staff
+    default: op
+  moonlight.staff.chat:
+    description: Access to internal staff chat and staff broadcast notifications
+    default: op
+
+  moonlight.logs.view:
+    description: Deep audit logging, player transaction history, and snapshot inspector (/logs)
+    default: op
+  moonlight.audit.invsee:
+    description: Inspect and interact live with online player inventories (/inv, /invsee)
+    default: op
+  moonlight.audit.enderchest:
+    description: Inspect and interact live with online player Ender Chests (/ec <player>)
+    default: op
+
+  moonlight.player:
+    description: Standard player permission bundle granted to all survival players
+    default: true
+    children:
+      moonlight.homes.use: true
+      moonlight.sethome: true
+      moonlight.home: true
+      moonlight.delhome: true
+      moonlight.homes.*: true
+      moonlight.ec: true
+      moonlight.scoreboard.use: true
+      moonlight.chat.msg: true
+      moonlight.hub.use: true
+      moonlight.server.use: true
+      moonlight.bedrock.use: true
+      moonlight.wraps.use: true
+      moonlight.rules: true
+      moonlight.link: true
+      moonlight.weblink: true
+      moonlight.discord: true
+      moonlight.dc: true
+      moonlight.ranks: true
+      moonlight.help: true
+      moonlight.yt: true
+      moonlight.pv.use: true
+      moonlight.pv.1: true
+
+  moonlight.pv.use:
+    description: Access to personal player vaults
+    default: true
+  moonlight.pv.1:
+    description: Access to Player Vault 1
+    default: true
+  moonlight.pv.2:
+    description: Access to Player Vault 2
+    default: op
+  moonlight.pv.3:
+    description: Access to Player Vault 3
+    default: op
+  moonlight.pv.4:
+    description: Access to Player Vault 4
+    default: op
+  moonlight.pv.5:
+    description: Access to Player Vault 5
+    default: op
+  moonlight.pv.*:
+    description: Access to all Player Vaults (1-5)
+    default: op
+
+  moonlight.homes.use:
+    description: Allows using personal homes (/sethome, /home, /delhome, /homes)
+    default: true
+  moonlight.sethome:
+    description: Allows setting personal home location (/sethome)
+    default: true
+  moonlight.home:
+    description: Allows teleporting to personal home (/home, /homes)
+    default: true
+  moonlight.delhome:
+    description: Allows deleting personal home (/delhome)
+    default: true
+  moonlight.homes.*:
+    description: Full access to all home commands
+    default: true
+    children:
+      moonlight.homes.use: true
+      moonlight.sethome: true
+      moonlight.home: true
+      moonlight.delhome: true
+  moonlight.homes.unlimited:
+    description: Grants unlimited homes to the player
+    default: op
+
+  moonlight.ec:
+    description: Allows opening personal Ender Chest (/ec, /enderchest)
+    default: true
+  moonlight.scoreboard.use:
+    description: Allows toggling and configuring sidebar scoreboard (/sb, /scoreboard)
+    default: true
+  moonlight.chat.msg:
+    description: Allows sending private direct messages (/msg, /tell, /w, /reply, /r)
+    default: true
+  moonlight.hub.use:
+    description: Allows connecting to the lobby (/hub, /lobby)
+    default: true
+  moonlight.server.use:
+    description: Allows switching servers or checking network mode (/server)
+    default: true
+  moonlight.bedrock.use:
+    description: Allows accessing Bedrock touch quick menu and crossplay info (/bedrock)
+    default: true
+  moonlight.rules:
+    description: Allows viewing official server rules (/rules, /mrules, /rulebook)
+    default: true
+  moonlight.link:
+    description: Allows viewing official website link (/link, /weblink, /website)
+    default: true
+  moonlight.weblink:
+    description: Allows viewing official website link (/weblink)
+    default: true
+  moonlight.discord:
+    description: Allows viewing official Discord invite link (/discord, /dc)
+    default: true
+  moonlight.dc:
+    description: Allows viewing official Discord invite link (/dc)
+    default: true
+  moonlight.ranks:
+    description: Allows viewing paid supporter ranks GUI and perk details (/ranks, /rank)
+    default: true
+  moonlight.help:
+    description: Allows viewing player guide and command handbook (/help)
+    default: true
+  moonlight.yt:
+    description: Allows browsing community YouTube videos directory (/yt, /youtube)
+    default: true
+
+  moonlight.features.*:
+    description: All donor and quality-of-life feature commands
+    default: op
+    children:
+      moonlight.workbench: true
+      moonlight.hat: true
+      moonlight.repair: true
+      moonlight.keepxp: true
+      moonlight.noafkkick: true
+      moonlight.pv.*: true
+
+  moonlight.workbench:
+    description: Opens virtual workbench on demand (/wb, /workbench)
+    default: op
+  moonlight.hat:
+    description: Wear items as a hat (/hat)
+    default: op
+  moonlight.repair:
+    description: Repair item in main hand (/repair)
+    default: op
+  moonlight.keepxp:
+    description: Keeps player experience levels and points upon death
+    default: op
+  moonlight.noafkkick:
+    description: Bypasses automatic AFK kicker
+    default: op
+
+  moonlight.pv.*:
+    description: Unlocks all 5 player vaults (/pv 1-5)
+    default: op
+    children:
+      moonlight.pv.1: true
+      moonlight.pv.2: true
+      moonlight.pv.3: true
+      moonlight.pv.4: true
+      moonlight.pv.5: true
+
+  moonlight.pv.1:
+    description: Access to Player Vault 1 (/pv 1)
+    default: op
+  moonlight.pv.2:
+    description: Access to Player Vault 2 (/pv 2)
+    default: op
+  moonlight.pv.3:
+    description: Access to Player Vault 3 (/pv 3)
+    default: op
+  moonlight.pv.4:
+    description: Access to Player Vault 4 (/pv 4)
+    default: op
+  moonlight.pv.5:
+    description: Access to Player Vault 5 (/pv 5)
+    default: op
+
+  moonlight.wraps.use:
+    description: Allows opening weapon wraps GUI and checking skins (/itemwarps)
+    default: true
+  moonlight.wraps.all:
+    description: Wildcard permission to unlock all 3D weapon wraps
+    default: op
+  moonlight.wraps.bypass.cooldown:
+    description: Bypasses weapon wraps change cooldown
+    default: op
+
+  moonlight.yt.admin:
+    description: Add, update, or remove YouTube channels (OP only)
+    default: op

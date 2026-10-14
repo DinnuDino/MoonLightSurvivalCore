@@ -1,0 +1,97 @@
+# ==============================================================================
+# MoonlightVanillaSurvivalCore - Audit, Inventory Snapshot & Time Machine System
+# Minecraft 26.2 (Paper API) | Java 21 LTS
+# ==============================================================================
+
+audit:
+  enabled: true
+  timezone: "Asia/Kolkata"
+
+  access:
+    # Strict OP-Only enforcement: Only player.isOp() or console can execute
+    # log queries, inventory inspection, and snapshot exports.
+    require-vanilla-op: true
+    allow-console: true
+    # Message sent to non-OP players who attempt any audit command
+    no-permission-message: "<red>Access denied: You must be a server operator (OP) to use audit logging tools.</red>"
+
+  logging:
+    # High-frequency 1-second recording with automated run-length deduplication
+    position-snapshot-interval-seconds: 1
+    inventory-snapshot-interval-seconds: 1
+    # State Deduplication: Suppresses duplicate rows when player does nothing (idle/afk/no-op)
+    # Merges consecutive identical states into a single record with duration_seconds counter
+    deduplication-enabled: true
+    # Dedicated EnderChest snapshot diff and transaction tracking
+    log-enderchest-events: true
+    # Log public chat messages into audit trail
+    chat-enabled: false
+    # Optional IP address tracking (Strictly disabled by default for privacy)
+    track-ip-addresses: false
+    # Track chest, barrel, hopper, and shulker box deposit/withdrawals
+    log-container-transactions: true
+    # Track item pickups, drops, crafting, smelting, and enchanting
+    log-inventory-events: true
+    # Batch size for async database flush
+    batch-size: 100
+    # Maximum interval (seconds) between background queue flushes
+    flush-interval-seconds: 5
+
+  retention:
+    # Permanent safe archival: 0 = logs are NEVER deleted.
+    # When enabled, only duplicate idle snapshots are cleaned/deduplicated,
+    # keeping 100% of the historical timeline and safe logs permanently with zero junk.
+    permanent-archival: true
+    delete-duplicate-idle-records-only: true
+    position-snapshots-days: 0
+    inventory-snapshots-days: 0
+    general-audit-days: 0
+    admin-actions-days: 0
+    refund-transactions-days: 0
+
+  refunds:
+    enabled: true
+    # Mandatory reason required for every refund and restore action
+    require-reason: true
+    minimum-reason-length: 5
+    maximum-reason-length: 255
+    # Two-step confirmation token validity window (seconds)
+    confirmation-expiry-seconds: 60
+    # Delivery mode when player inventory is full: 'mailbox-if-full' or 'drop-at-feet'
+    default-mode: "mailbox-if-full"
+    # Strict safety constraint: Restoring entire inventory replaces items only with OP confirmation
+    allow-full-inventory-restore: false
+    # Maximum items granted in a single refund command
+    max-items-per-refund: 2304
+    # Rate limit: Maximum refunds an individual OP can execute per hour
+    max-refunds-per-op-per-hour: 20
+    # Rate limit: Maximum refunds a target player can receive per hour
+    max-refunds-per-target-per-hour: 10
+    # Materials strictly forbidden from being refunded under any circumstance
+    blocked-materials:
+      - BEDROCK
+      - BARRIER
+      - COMMAND_BLOCK
+      - CHAIN_COMMAND_BLOCK
+      - REPEATING_COMMAND_BLOCK
+      - STRUCTURE_BLOCK
+      - STRUCTURE_VOID
+      - JIGSAW
+      - LIGHT
+      - SPAWNER
+    # Forbid custom items with unsafe NBT or unrecognized attributes
+    allow-unsafe-items: false
+
+  exports:
+    enabled: true
+    format: "csv"
+    # Relative to plugins/MoonlightVanillaSurvivalCore/
+    export-directory: "exports"
+    # Maximum records allowed per single export file
+    maximum-records: 100000
+
+  privacy:
+    # Never expose IP address in normal /mlogs output
+    show-ip-in-normal-output: false
+    # Mask IPs (e.g., 192.168.***.***) in audit exports if enabled
+    mask-ip-in-audit-output: true

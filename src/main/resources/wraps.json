@@ -1,0 +1,1190 @@
+[
+  {
+    "key": "pheonix_grace",
+    "name": "Pheonix Grace",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff3838:#ff9900><bold>Phoenix Grace</bold></gradient>",
+    "model": "minecraft:item/pheonixgrace",
+    "model_name": "pheonixgrace",
+    "tier": "revered"
+  },
+  {
+    "key": "abominable_great_saber",
+    "name": "Abominable Great Saber",
+    "category": "SWORD",
+    "color_format": "<gradient:#4ca1af:#c4e0e5><bold>Abominable Great Saber</bold></gradient>",
+    "model": "minecraft:item/abominablegreatsaber",
+    "model_name": "abominablegreatsaber",
+    "tier": "revered"
+  },
+  {
+    "key": "abominable_blade",
+    "name": "Abominable Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#00b4db:#0083b0><bold>Abominable Blade</bold></gradient>",
+    "model": "minecraft:item/abominableblade",
+    "model_name": "abominableblade",
+    "tier": "revered"
+  },
+  {
+    "key": "abominable_scythe",
+    "name": "Abominable Scythe",
+    "category": "SWORD",
+    "color_format": "<gradient:#00c0ff:#42e695><bold>Abominable Scythe</bold></gradient>",
+    "model": "minecraft:item/abominablescythe",
+    "model_name": "abominablescythe",
+    "tier": "revered"
+  },
+  {
+    "key": "acidic_cleaver",
+    "name": "Acidic Cleaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#39ff14:#00b4d8><bold>Acidic Cleaver</bold></gradient>",
+    "model": "minecraft:item/aciddemon",
+    "model_name": "aciddemon",
+    "tier": "revered"
+  },
+  {
+    "key": "amethyst_shuriken",
+    "name": "Amethyst Shuriken",
+    "category": "SWORD",
+    "color_format": "<gradient:#b5179e:#7209b7><bold>Amethyst Shuriken</bold></gradient>",
+    "model": "minecraft:item/amethyst_shuriken",
+    "model_name": "amethyst_shuriken",
+    "tier": "friendly"
+  },
+  {
+    "key": "ancient_royal_great_sword",
+    "name": "Ancient Royal Great Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#f6d365:#fda085><bold>Ancient Royal Great Sword</bold></gradient>",
+    "model": "minecraft:item/ancient_royal_great_sword",
+    "model_name": "ancient_royal_great_sword",
+    "tier": "exalted"
+  },
+  {
+    "key": "aquatic_sacred_blade",
+    "name": "Aquatic Sacred Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#2193b0:#6dd5ed><bold>Aquatic Sacred Blade</bold></gradient>",
+    "model": "minecraft:item/aquantic_sacred_blade",
+    "model_name": "aquantic_sacred_blade",
+    "tier": "exalted"
+  },
+  {
+    "key": "oceans_rage",
+    "name": "Ocean's Rage",
+    "category": "TRIDENT",
+    "color_format": "<gradient:#00c0ff:#42e695><bold>Ocean's Rage</bold></gradient>",
+    "model": "minecraft:item/aquantictrident",
+    "model_name": "aquantictrident",
+    "tier": "honoured"
+  },
+  {
+    "key": "ashuras_blade",
+    "name": "Ashura's Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff416c:#ff4b2b><bold>Ashura's Blade</bold></gradient>",
+    "model": "minecraft:item/ashura_blade",
+    "model_name": "ashura_blade",
+    "tier": "exalted"
+  },
+  {
+    "key": "blood_edge",
+    "name": "Blood Edge",
+    "category": "SWORD",
+    "color_format": "<gradient:#8a0000:#e52d27><bold>Blood Edge</bold></gradient>",
+    "model": "minecraft:item/bloodedge",
+    "model_name": "bloodedge",
+    "tier": "honoured"
+  },
+  {
+    "key": "bloody_death",
+    "name": "Bloody Death",
+    "category": "SWORD",
+    "color_format": "<gradient:#6a040f:#dc2f02><bold>Bloody Death</bold></gradient>",
+    "model": "minecraft:item/bloodydeath",
+    "model_name": "bloodydeath",
+    "tier": "honoured"
+  },
+  {
+    "key": "carian_knights_sword",
+    "name": "Carian Knight's Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#4361ee:#4cc9f0><bold>Carian Knight's Sword</bold></gradient>",
+    "model": "minecraft:item/cariansword",
+    "model_name": "cariansword",
+    "tier": "honoured"
+  },
+  {
+    "key": "chrono_blade",
+    "name": "Chrono Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ffd166:#06d6a0><bold>Chrono Blade</bold></gradient>",
+    "model": "minecraft:item/chrono_blade",
+    "model_name": "chrono_blade",
+    "tier": "honoured"
+  },
+  {
+    "key": "corrupted_mythic_blade",
+    "name": "Corrupted Mythic Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#5a189a:#e0aaff><bold>Corrupted Mythic Blade</bold></gradient>",
+    "model": "minecraft:item/corruptedmythicblade",
+    "model_name": "corruptedmythicblade",
+    "tier": "exalted"
+  },
+  {
+    "key": "creation_splitter",
+    "name": "Creation Splitter",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff007f:#7928ca><bold>Creation Splitter</bold></gradient>",
+    "model": "minecraft:item/creationsplitter",
+    "model_name": "creationsplitter",
+    "tier": "exalted"
+  },
+  {
+    "key": "crescent_rose",
+    "name": "Crescent Rose",
+    "category": "SWORD",
+    "color_format": "<gradient:#e52d27:#b31217><bold>Crescent Rose</bold></gradient>",
+    "model": "minecraft:item/crescentrose",
+    "model_name": "crescentrose",
+    "tier": "friendly"
+  },
+  {
+    "key": "cyber_katana",
+    "name": "Cyber Katana",
+    "category": "SWORD",
+    "color_format": "<gradient:#f72585:#7209b7><bold>Cyber Katana</bold></gradient>",
+    "model": "minecraft:item/cyberkatana",
+    "model_name": "cyberkatana",
+    "tier": "revered"
+  },
+  {
+    "key": "cyber_mantis_blade",
+    "name": "Cyber Mantis Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#4cc9f0:#4361ee><bold>Cyber Mantis Blade</bold></gradient>",
+    "model": "minecraft:item/cybermantisblade",
+    "model_name": "cybermantisblade",
+    "tier": "revered"
+  },
+  {
+    "key": "cybernetic_katana",
+    "name": "Cybernetic Katana",
+    "category": "SWORD",
+    "color_format": "<gradient:#00f2fe:#4facfe><bold>Cybernetic Katana</bold></gradient>",
+    "model": "minecraft:item/cybernetickatana",
+    "model_name": "cybernetickatana",
+    "tier": "revered"
+  },
+  {
+    "key": "cybernetic_knife",
+    "name": "Cybernetic Knife",
+    "category": "SWORD",
+    "color_format": "<gradient:#00f5d4:#00bbf9><bold>Cybernetic Knife</bold></gradient>",
+    "model": "minecraft:item/cyberneticknife",
+    "model_name": "cyberneticknife",
+    "tier": "revered"
+  },
+  {
+    "key": "cybernetic_chainsaw_blade",
+    "name": "Cybernetic Chainsaw Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#f12711:#f5af19><bold>Cybernetic Chainsaw Blade</bold></gradient>",
+    "model": "minecraft:item/cyberneticsawblade",
+    "model_name": "cyberneticsawblade",
+    "tier": "revered"
+  },
+  {
+    "key": "cyber_sword",
+    "name": "Cyber Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#00c6ff:#0072ff><bold>Cyber Sword</bold></gradient>",
+    "model": "minecraft:item/cybersword",
+    "model_name": "cybersword",
+    "tier": "revered"
+  },
+  {
+    "key": "dainsleif",
+    "name": "Dainsleif",
+    "category": "SWORD",
+    "color_format": "<gradient:#833ab4:#fd1d1d><bold>Dainsleif</bold></gradient>",
+    "model": "minecraft:item/dainsleif",
+    "model_name": "dainsleif",
+    "tier": "revered"
+  },
+  {
+    "key": "dark_blade",
+    "name": "Dark Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#2c3e50:#3498db><bold>Dark Blade</bold></gradient>",
+    "model": "minecraft:item/dark_blade",
+    "model_name": "dark_blade",
+    "tier": "friendly"
+  },
+  {
+    "key": "dark_cleaver",
+    "name": "Dark Cleaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#1e3c72:#2a5298><bold>Dark Cleaver</bold></gradient>",
+    "model": "minecraft:item/dark_cleaver",
+    "model_name": "dark_cleaver",
+    "tier": "friendly"
+  },
+  {
+    "key": "death_knights_dagger",
+    "name": "Death Knight's Dagger",
+    "category": "SWORD",
+    "color_format": "<gradient:#3e5151:#decba4><bold>Death Knight's Dagger</bold></gradient>",
+    "model": "minecraft:item/death_knight_dagger",
+    "model_name": "death_knight_dagger",
+    "tier": "friendly"
+  },
+  {
+    "key": "death_knights_sword",
+    "name": "Death Knight's Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#2c3e50:#bdc3c7><bold>Death Knight's Sword</bold></gradient>",
+    "model": "minecraft:item/death_knight_sword",
+    "model_name": "death_knight_sword",
+    "tier": "exalted"
+  },
+  {
+    "key": "demigods_unholy_halberd",
+    "name": "Demigod's Unholy Halberd",
+    "category": "AXE",
+    "color_format": "<gradient:#800020:#e0115f><bold>Demigod's Unholy Halberd</bold></gradient>",
+    "model": "minecraft:item/demigodsunholyhalberd",
+    "model_name": "demigodsunholyhalberd",
+    "tier": "revered"
+  },
+  {
+    "key": "demigods_unholy_blade",
+    "name": "Demigod's Unholy Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#800020:#e0115f><bold>Demigod's Unholy Blade</bold></gradient>",
+    "model": "minecraft:item/demigodsunholyblade",
+    "model_name": "demigodsunholyblade",
+    "tier": "honoured"
+  },
+  {
+    "key": "demonic_blade",
+    "name": "Demonic Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#900c3f:#c70039><bold>Demonic Blade</bold></gradient>",
+    "model": "minecraft:item/demonicblade",
+    "model_name": "demonicblade",
+    "tier": "friendly"
+  },
+  {
+    "key": "demonic_cleaver",
+    "name": "Demonic Cleaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff416c:#ff4b2b><bold>Demonic Cleaver</bold></gradient>",
+    "model": "minecraft:item/demoniccleaver",
+    "model_name": "demoniccleaver",
+    "tier": "friendly"
+  },
+  {
+    "key": "demon_lords_great_axe",
+    "name": "Demon Lord's Great Axe",
+    "category": "AXE",
+    "color_format": "<gradient:#720000:#ff1f1f><bold>Demon Lord's Great Axe</bold></gradient>",
+    "model": "minecraft:item/demonlordsgreataxe",
+    "model_name": "demonlordsgreataxe",
+    "tier": "honoured"
+  },
+  {
+    "key": "demon_lords_sword",
+    "name": "Demon Lord's Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#65000b:#ff2a2a><bold>Demon Lord's Sword</bold></gradient>",
+    "model": "minecraft:item/demonlordsword",
+    "model_name": "demonlordsword",
+    "tier": "honoured"
+  },
+  {
+    "key": "divine_justice",
+    "name": "Divine Justice",
+    "category": "SWORD",
+    "color_format": "<gradient:#f6d365:#fda085><bold>Divine Justice</bold></gradient>",
+    "model": "minecraft:item/divine_justice",
+    "model_name": "divine_justice",
+    "tier": "revered"
+  },
+  {
+    "key": "divine_reaper",
+    "name": "Divine Reaper",
+    "category": "SWORD",
+    "color_format": "<gradient:#f9d423:#ff4e50><bold>Divine Reaper</bold></gradient>",
+    "model": "minecraft:item/divine_reaper",
+    "model_name": "divine_reaper",
+    "tier": "revered"
+  },
+  {
+    "key": "divine_punisher",
+    "name": "Divine Punisher",
+    "category": "SWORD",
+    "color_format": "<gradient:#fbc2eb:#a6c1ee><bold>Divine Punisher</bold></gradient>",
+    "model": "minecraft:item/divinepunisher",
+    "model_name": "divinepunisher",
+    "tier": "revered"
+  },
+  {
+    "key": "divine_axe_rhitta",
+    "name": "Divine Axe Rhitta",
+    "category": "AXE",
+    "color_format": "<gradient:#f7971e:#ffd200><bold>Divine Axe Rhitta</bold></gradient>",
+    "model": "minecraft:item/divineaxerhitta",
+    "model_name": "divineaxerhitta",
+    "tier": "honoured"
+  },
+  {
+    "key": "dragon_slaying_blade",
+    "name": "Dragon Slaying blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff512f:#dd2476><bold>Dragon Slaying Blade</bold></gradient>",
+    "model": "minecraft:item/dragonslayingblade",
+    "model_name": "dragonslayingblade",
+    "tier": "honoured"
+  },
+  {
+    "key": "edge_of_the_astral_plane",
+    "name": "Edge Of The Astral Plane",
+    "category": "SWORD",
+    "color_format": "<gradient:#8a2387:#e94057><bold>Edge Of The Astral Plane</bold></gradient>",
+    "model": "minecraft:item/edgeoftheastralplane",
+    "model_name": "edgeoftheastralplane",
+    "tier": "exalted"
+  },
+  {
+    "key": "epic_sword",
+    "name": "Epic Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#654ea3:#eaafc8><bold>Epic Sword</bold></gradient>",
+    "model": "minecraft:item/epicsword",
+    "model_name": "epicsword",
+    "tier": "friendly"
+  },
+  {
+    "key": "estoc",
+    "name": "Estoc",
+    "category": "SWORD",
+    "color_format": "<gradient:#606c88:#3f4c6b><bold>Estoc</bold></gradient>",
+    "model": "minecraft:item/estoc",
+    "model_name": "estoc",
+    "tier": "friendly"
+  },
+  {
+    "key": "fallen_gods_spear",
+    "name": "Fallen God's Spear",
+    "category": "TRIDENT",
+    "color_format": "<gradient:#ff4e50:#f9d423><bold>Fallen God's Spear</bold></gradient>",
+    "model": "minecraft:item/fallengodspear",
+    "model_name": "fallengodspear",
+    "tier": "honoured"
+  },
+  {
+    "key": "fallen_gods_sword",
+    "name": "Fallen God's Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff4e50:#f9d423><bold>Fallen God's Sword</bold></gradient>",
+    "model": "minecraft:item/fallengodsword",
+    "model_name": "fallengodsword",
+    "tier": "exalted"
+  },
+  {
+    "key": "floral_longsword",
+    "name": "Floral Longsword",
+    "category": "SWORD",
+    "color_format": "<gradient:#11998e:#38ef7d><bold>Floral Longsword</bold></gradient>",
+    "model": "minecraft:item/floral_longsword",
+    "model_name": "floral_longsword",
+    "tier": "friendly"
+  },
+  {
+    "key": "floral_sabre",
+    "name": "Floral Sabre",
+    "category": "SWORD",
+    "color_format": "<gradient:#56ab2f:#a8e063><bold>Floral Sabre</bold></gradient>",
+    "model": "minecraft:item/floral_sabre",
+    "model_name": "floral_sabre",
+    "tier": "friendly"
+  },
+  {
+    "key": "forest_guardians_glaive",
+    "name": "Forest Guardian's Glaive",
+    "category": "SWORD",
+    "color_format": "<gradient:#134e5e:#71b280><bold>Forest Guardian's Glaive</bold></gradient>",
+    "model": "minecraft:item/forest_guardian_glaive",
+    "model_name": "forest_guardian_glaive",
+    "tier": "friendly"
+  },
+  {
+    "key": "frost_axe",
+    "name": "Frost Axe",
+    "category": "AXE",
+    "color_format": "<gradient:#00c6ff:#0072ff><bold>Frost Axe</bold></gradient>",
+    "model": "minecraft:item/frostaxe",
+    "model_name": "frostaxe",
+    "tier": "friendly"
+  },
+  {
+    "key": "frost_blade",
+    "name": "Frost Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#48c6ef:#6f86d6><bold>Frost Blade</bold></gradient>",
+    "model": "minecraft:item/frostblade",
+    "model_name": "frostblade",
+    "tier": "friendly"
+  },
+  {
+    "key": "frost_scythe",
+    "name": "Frost Scythe",
+    "category": "SWORD",
+    "color_format": "<gradient:#38ef7d:#11998e><bold>Frost Scythe</bold></gradient>",
+    "model": "minecraft:item/frostscythe",
+    "model_name": "frostscythe",
+    "tier": "revered"
+  },
+  {
+    "key": "wraith_scythe",
+    "name": "Wraith Scythe",
+    "category": "SWORD",
+    "color_format": "<gradient:#11998e:#38ef7d><bold>Wraith Scythe</bold></gradient>",
+    "model": "minecraft:item/greenscythe",
+    "model_name": "greenscythe",
+    "tier": "revered"
+  },
+  {
+    "key": "hero_sword",
+    "name": "Hero Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#f12711:#f5af19><bold>Hero Sword</bold></gradient>",
+    "model": "minecraft:item/herosword",
+    "model_name": "herosword",
+    "tier": "friendly"
+  },
+  {
+    "key": "holy_moonlight_sword",
+    "name": "Holy Moonlight Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#74ebd5:#acb6e5><bold>Holy Moonlight Sword</bold></gradient>",
+    "model": "minecraft:item/holymoonlightsword",
+    "model_name": "holymoonlightsword",
+    "tier": "revered"
+  },
+  {
+    "key": "hornets_needle",
+    "name": "Hornet's Needle",
+    "category": "SWORD",
+    "color_format": "<gradient:#f9d423:#ff4e50><bold>Hornet's Needle</bold></gradient>",
+    "model": "minecraft:item/hornetsneedle",
+    "model_name": "hornetsneedle",
+    "tier": "honoured"
+  },
+  {
+    "key": "jade_halberd",
+    "name": "Jade Halberd",
+    "category": "AXE",
+    "color_format": "<gradient:#0ba360:#3cba92><bold>Jade Halberd</bold></gradient>",
+    "model": "minecraft:item/jadehalberd",
+    "model_name": "jadehalberd",
+    "tier": "honoured"
+  },
+  {
+    "key": "katana",
+    "name": "Katana",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff5e62:#ff9966><bold>Katana</bold></gradient>",
+    "model": "minecraft:item/katana",
+    "model_name": "katana",
+    "tier": "friendly"
+  },
+  {
+    "key": "legendary_sword",
+    "name": "Legendary Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#f7971e:#ffd200><bold>Legendary Sword</bold></gradient>",
+    "model": "minecraft:item/legendarysword",
+    "model_name": "legendarysword",
+    "tier": "exalted"
+  },
+  {
+    "key": "longsword",
+    "name": "Longsword",
+    "category": "SWORD",
+    "color_format": "<gradient:#8e9eab:#eef2f3><bold>Longsword</bold></gradient>",
+    "model": "minecraft:item/longsword",
+    "model_name": "longsword",
+    "tier": "friendly"
+  },
+  {
+    "key": "masamune",
+    "name": "Masamune",
+    "category": "SWORD",
+    "color_format": "<gradient:#4facfe:#00f2fe><bold>Masamune</bold></gradient>",
+    "model": "minecraft:item/masamune",
+    "model_name": "masamune",
+    "tier": "honoured"
+  },
+  {
+    "key": "mjolnir",
+    "name": "Mjolnir",
+    "category": "MACE",
+    "color_format": "<gradient:#00d2ff:#3a7bd5><bold>Mjolnir</bold></gradient>",
+    "model": "minecraft:item/mjolnir",
+    "model_name": "mjolnir",
+    "tier": "honoured"
+  },
+  {
+    "key": "molten_blade",
+    "name": "Molten Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff2a00:#ff7700><bold>Molten Blade</bold></gradient>",
+    "model": "minecraft:item/moltenblade",
+    "model_name": "moltenblade",
+    "tier": "honoured"
+  },
+  {
+    "key": "molten_sword",
+    "name": "Molten Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff3e00:#ff9500><bold>Molten Sword</bold></gradient>",
+    "model": "minecraft:item/moltensword",
+    "model_name": "moltensword",
+    "tier": "friendly"
+  },
+  {
+    "key": "muramasa",
+    "name": "Muramasa",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff0844:#ffb199><bold>Muramasa</bold></gradient>",
+    "model": "minecraft:item/muramasa",
+    "model_name": "muramasa",
+    "tier": "honoured"
+  },
+  {
+    "key": "mystical_spellblade",
+    "name": "Mystical Spellblade",
+    "category": "SWORD",
+    "color_format": "<gradient:#b5179e:#7209b7><bold>Mystical Spellblade</bold></gradient>",
+    "model": "minecraft:item/mysticalspellblade",
+    "model_name": "mysticalspellblade",
+    "tier": "exalted"
+  },
+  {
+    "key": "mythic_blade",
+    "name": "Mythic Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#9d4edd:#c77dff><bold>Mythic Blade</bold></gradient>",
+    "model": "minecraft:item/mythicblade",
+    "model_name": "mythicblade",
+    "tier": "exalted"
+  },
+  {
+    "key": "partisan",
+    "name": "Partisan",
+    "category": "TRIDENT",
+    "color_format": "<gradient:#8e9eab:#eef2f3><bold>Partisan</bold></gradient>",
+    "model": "minecraft:item/partisan",
+    "model_name": "partisan",
+    "tier": "friendly"
+  },
+  {
+    "key": "pharaohs_treasure",
+    "name": "Pharaoh's Treasure",
+    "category": "SWORD",
+    "color_format": "<gradient:#f7971e:#ffd200><bold>Pharaoh's Treasure</bold></gradient>",
+    "model": "minecraft:item/pharaohs_treasure",
+    "model_name": "pharaohs_treasure",
+    "tier": "exalted"
+  },
+  {
+    "key": "power_fuse_hammer",
+    "name": "Power Fuse Hammer",
+    "category": "MACE",
+    "color_format": "<gradient:#ff8008:#ffc837><bold>Power Fuse Hammer</bold></gradient>",
+    "model": "minecraft:item/powerfusehammer",
+    "model_name": "powerfusehammer",
+    "tier": "honoured"
+  },
+  {
+    "key": "power_fuse_sword",
+    "name": "Power Fuse Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#f7971e:#ffd200><bold>Power Fuse Sword</bold></gradient>",
+    "model": "minecraft:item/powerfusesword",
+    "model_name": "powerfusesword",
+    "tier": "exalted"
+  },
+  {
+    "key": "rivers_of_blood",
+    "name": "Rivers Of Blood",
+    "category": "SWORD",
+    "color_format": "<gradient:#b30000:#ff1e00><bold>Rivers Of Blood</bold></gradient>",
+    "model": "minecraft:item/riversofblood",
+    "model_name": "riversofblood",
+    "tier": "honoured"
+  },
+  {
+    "key": "royal_chakram",
+    "name": "Royal Chakram",
+    "category": "SWORD",
+    "color_format": "<gradient:#fddb92:#d1fdff><bold>Royal Chakram</bold></gradient>",
+    "model": "minecraft:item/royalchakram",
+    "model_name": "royalchakram",
+    "tier": "friendly"
+  },
+  {
+    "key": "royal_rapier",
+    "name": "Royal Rapier",
+    "category": "SWORD",
+    "color_format": "<gradient:#ffecd2:#fcb69f><bold>Royal Rapier</bold></gradient>",
+    "model": "minecraft:item/royalrapier",
+    "model_name": "royalrapier",
+    "tier": "friendly"
+  },
+  {
+    "key": "sabre",
+    "name": "Sabre",
+    "category": "SWORD",
+    "color_format": "<gradient:#d4af37:#fff275><bold>Sabre</bold></gradient>",
+    "model": "minecraft:item/sabre",
+    "model_name": "sabre",
+    "tier": "friendly"
+  },
+  {
+    "key": "sculk_cleaver",
+    "name": "Sculk Cleaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#051923:#00a6fb><bold>Sculk Cleaver</bold></gradient>",
+    "model": "minecraft:item/sculkcleaver",
+    "model_name": "sculkcleaver",
+    "tier": "honoured"
+  },
+  {
+    "key": "scissor_blade",
+    "name": "Scissor Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#f857a6:#ff5858><bold>Scissor Blade</bold></gradient>",
+    "model": "minecraft:item/scissorblade",
+    "model_name": "scissorblade",
+    "tier": "exalted"
+  },
+  {
+    "key": "sculk_scythe",
+    "name": "Sculk Scythe",
+    "category": "SWORD",
+    "color_format": "<gradient:#003554:#0582ca><bold>Sculk Scythe</bold></gradient>",
+    "model": "minecraft:item/sculkscythe",
+    "model_name": "sculkscythe",
+    "tier": "revered"
+  },
+  {
+    "key": "sculk_sword",
+    "name": "Sculk Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#006494:#00a6fb><bold>Sculk Sword</bold></gradient>",
+    "model": "minecraft:item/sculksword",
+    "model_name": "sculksword",
+    "tier": "honoured"
+  },
+  {
+    "key": "silverine_blade",
+    "name": "Silverine Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#e0eafc:#cfdef3><bold>Silverine Blade</bold></gradient>",
+    "model": "minecraft:item/silverine_blade",
+    "model_name": "silverine_blade",
+    "tier": "friendly"
+  },
+  {
+    "key": "sentinels_will",
+    "name": "Sentinel's Will",
+    "category": "SWORD",
+    "color_format": "<gradient:#4facfe:#00f2fe><bold>Sentinel's Will</bold></gradient>",
+    "model": "minecraft:item/sentinels_will",
+    "model_name": "sentinels_will",
+    "tier": "exalted"
+  },
+  {
+    "key": "soul_devourer",
+    "name": "Soul Devourer",
+    "category": "SWORD",
+    "color_format": "<gradient:#654ea3:#eaafc8><bold>Soul Devourer</bold></gradient>",
+    "model": "minecraft:item/soul_devourer",
+    "model_name": "soul_devourer",
+    "tier": "revered"
+  },
+  {
+    "key": "soul_collector",
+    "name": "Soul Collector",
+    "category": "SWORD",
+    "color_format": "<gradient:#5f2c82:#49a09d><bold>Soul Collector</bold></gradient>",
+    "model": "minecraft:item/soul_collector",
+    "model_name": "soul_collector",
+    "tier": "revered"
+  },
+  {
+    "key": "soul_edge",
+    "name": "Soul Edge",
+    "category": "SWORD",
+    "color_format": "<gradient:#232526:#414345><bold>Soul Edge</bold></gradient>",
+    "model": "minecraft:item/souledge",
+    "model_name": "souledge",
+    "tier": "revered"
+  },
+  {
+    "key": "soul_claws",
+    "name": "Soul Claws",
+    "category": "SWORD",
+    "color_format": "<gradient:#8e2de2:#4a00e0><bold>Soul Claws</bold></gradient>",
+    "model": "minecraft:item/soulclaws",
+    "model_name": "soulclaws",
+    "tier": "revered"
+  },
+  {
+    "key": "steel_sword",
+    "name": "Steel Sword",
+    "category": "SWORD",
+    "color_format": "<gradient:#757f9a:#d7dde8><bold>Steel Sword</bold></gradient>",
+    "model": "minecraft:item/steelsword",
+    "model_name": "steelsword",
+    "tier": "friendly"
+  },
+  {
+    "key": "soul_harvester",
+    "name": "Soul Harvester",
+    "category": "SWORD",
+    "color_format": "<gradient:#7f00ff:#e100ff><bold>Soul Harvester</bold></gradient>",
+    "model": "minecraft:item/soulharvester",
+    "model_name": "soulharvester",
+    "tier": "revered"
+  },
+  {
+    "key": "tengens_blade",
+    "name": "Tengen's Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff9900:#ff5500><bold>Tengen's Blade</bold></gradient>",
+    "model": "minecraft:item/tengensblade",
+    "model_name": "tengensblade",
+    "tier": "honoured"
+  },
+  {
+    "key": "stop_sign",
+    "name": "Stop Sign",
+    "category": "MACE",
+    "color_format": "<gradient:#ff1e00:#ffffff><bold>Stop Sign</bold></gradient>",
+    "model": "minecraft:item/stop_sign",
+    "model_name": "stop_sign",
+    "tier": "friendly"
+  },
+  {
+    "key": "sunbreak",
+    "name": "Sunbreak",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff7b00:#ffae00><bold>Sunbreak</bold></gradient>",
+    "model": "minecraft:item/sunbreak",
+    "model_name": "sunbreak",
+    "tier": "friendly"
+  },
+  {
+    "key": "thunder_bringer",
+    "name": "Thunder Bringer",
+    "category": "SWORD",
+    "color_format": "<gradient:#f9d423:#ff4e50><bold>Thunder Bringer</bold></gradient>",
+    "model": "minecraft:item/thunderbringer",
+    "model_name": "thunderbringer",
+    "tier": "honoured"
+  },
+  {
+    "key": "terra_blade",
+    "name": "Terra Blade",
+    "category": "SWORD",
+    "color_format": "<gradient:#00b09b:#96c93d><bold>Terra Blade</bold></gradient>",
+    "model": "minecraft:item/terrablade",
+    "model_name": "terrablade",
+    "tier": "friendly"
+  },
+  {
+    "key": "thousand_demon_daggers",
+    "name": "Thousand Demon Daggers",
+    "category": "SWORD",
+    "color_format": "<gradient:#800020:#e0115f><bold>Thousand Demon Daggers</bold></gradient>",
+    "model": "minecraft:item/thousanddemondaggers",
+    "model_name": "thousanddemondaggers",
+    "tier": "exalted"
+  },
+  {
+    "key": "yoru",
+    "name": "Yoru",
+    "category": "SWORD",
+    "color_format": "<gradient:#00c6ff:#0072ff><bold>Yoru</bold></gradient>",
+    "model": "minecraft:item/yoru",
+    "model_name": "yoru",
+    "tier": "honoured"
+  },
+  {
+    "key": "plague_longsword",
+    "name": "Plague Longsword",
+    "category": "SWORD",
+    "color_format": "<gradient:#11998e:#38ef7d><bold>Plague Longsword</bold></gradient>",
+    "model": "minecraft:item/toxic_longsword",
+    "model_name": "toxic_longsword",
+    "tier": "honoured"
+  },
+  {
+    "key": "vampiric_needle",
+    "name": "Vampiric Needle",
+    "category": "SWORD",
+    "color_format": "<gradient:#5c0029:#d11a2a><bold>Vampiric Needle</bold></gradient>",
+    "model": "minecraft:item/vampiricneedle",
+    "model_name": "vampiricneedle",
+    "tier": "honoured"
+  },
+  {
+    "key": "wakizashi",
+    "name": "Wakizashi",
+    "category": "SWORD",
+    "color_format": "<gradient:#fc6076:#ff9a44><bold>Wakizashi</bold></gradient>",
+    "model": "minecraft:item/wakizashi",
+    "model_name": "wakizashi",
+    "tier": "honoured"
+  },
+  {
+    "key": "whisperwind",
+    "name": "Whisperwind",
+    "category": "SWORD",
+    "color_format": "<gradient:#c2e59c:#64b3f4><bold>Whisperwind</bold></gradient>",
+    "model": "minecraft:item/whisperwind",
+    "model_name": "whisperwind",
+    "tier": "friendly"
+  },
+  {
+    "key": "wickpiercer",
+    "name": "Wickpiercer",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff4e50:#f9d423><bold>Wickpiercer</bold></gradient>",
+    "model": "minecraft:item/wickpiercer",
+    "model_name": "wickpiercer",
+    "tier": "honoured"
+  },
+  {
+    "key": "thunderbrand",
+    "name": "Thunderbrand",
+    "category": "SWORD",
+    "color_format": "<gradient:#fbc2eb:#a6c1ee><bold>Thunderbrand</bold></gradient>",
+    "model": "minecraft:item/thunderbrand",
+    "model_name": "thunderbrand",
+    "tier": "honoured"
+  },
+  {
+    "key": "watcher_claymore",
+    "name": "Watcher Claymore",
+    "category": "SWORD",
+    "color_format": "<gradient:#8a2387:#e94057><bold>Watcher Claymore</bold></gradient>",
+    "model": "minecraft:item/watcher_claymore",
+    "model_name": "watcher_claymore",
+    "tier": "exalted"
+  },
+  {
+    "key": "watching_warglaive",
+    "name": "Watching Warglaive",
+    "category": "SWORD",
+    "color_format": "<gradient:#7f00ff:#e100ff><bold>Watching Warglaive</bold></gradient>",
+    "model": "minecraft:item/watching_warglaive",
+    "model_name": "watching_warglaive",
+    "tier": "exalted"
+  },
+  {
+    "key": "waxweaver",
+    "name": "Waxweaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#f6d365:#fda085><bold>Waxweaver</bold></gradient>",
+    "model": "minecraft:item/waxweaver",
+    "model_name": "waxweaver",
+    "tier": "honoured"
+  },
+  {
+    "key": "stars_edge",
+    "name": "Star's Edge",
+    "category": "SWORD",
+    "color_format": "<gradient:#fbc2eb:#a6c1ee><bold>Star's Edge</bold></gradient>",
+    "model": "minecraft:item/stars_edge",
+    "model_name": "stars_edge",
+    "tier": "friendly"
+  },
+  {
+    "key": "storm_bringer",
+    "name": "Storm Bringer",
+    "category": "SWORD",
+    "color_format": "<gradient:#4facfe:#00f2fe><bold>Storm Bringer</bold></gradient>",
+    "model": "minecraft:item/stormbringer",
+    "model_name": "stormbringer",
+    "tier": "honoured"
+  },
+  {
+    "key": "storms_edge",
+    "name": "Storm's Edge",
+    "category": "SWORD",
+    "color_format": "<gradient:#43e97b:#38f9d7><bold>Storm's Edge</bold></gradient>",
+    "model": "minecraft:item/storms_edge",
+    "model_name": "storms_edge",
+    "tier": "honoured"
+  },
+  {
+    "key": "ribbon_cleaver",
+    "name": "Ribbon Cleaver",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff758c:#ff7eb3><bold>Ribbon Cleaver</bold></gradient>",
+    "model": "minecraft:item/ribboncleaver",
+    "model_name": "ribboncleaver",
+    "tier": "honoured"
+  },
+  {
+    "key": "righteous_relic",
+    "name": "Righteous Relic",
+    "category": "SWORD",
+    "color_format": "<gradient:#e0c3fc:#8ec5fc><bold>Righteous Relic</bold></gradient>",
+    "model": "minecraft:item/righteous_relic",
+    "model_name": "righteous_relic",
+    "tier": "exalted"
+  },
+  {
+    "key": "soulrender",
+    "name": "Soulrender",
+    "category": "SWORD",
+    "color_format": "<gradient:#4b134f:#c94b4b><bold>Soulrender</bold></gradient>",
+    "model": "minecraft:item/soulrender",
+    "model_name": "soulrender",
+    "tier": "revered"
+  },
+  {
+    "key": "soul_stealer",
+    "name": "Soul Stealer",
+    "category": "SWORD",
+    "color_format": "<gradient:#505285:#585e92><bold>Soul Stealer</bold></gradient>",
+    "model": "minecraft:item/soulstealer",
+    "model_name": "soulstealer",
+    "tier": "revered"
+  },
+  {
+    "key": "enigma",
+    "name": "Enigma",
+    "category": "SWORD",
+    "color_format": "<gradient:#200122:#6f0000><bold>Enigma</bold></gradient>",
+    "model": "minecraft:item/enigma",
+    "model_name": "enigma",
+    "tier": "exalted"
+  },
+  {
+    "key": "hearthflame",
+    "name": "Hearthflame",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff5722:#ff9800><bold>Hearthflame</bold></gradient>",
+    "model": "minecraft:item/hearthflame",
+    "model_name": "hearthflame",
+    "tier": "honoured"
+  },
+  {
+    "key": "icewhisper",
+    "name": "Icewhisper",
+    "category": "SWORD",
+    "color_format": "<gradient:#00d2ff:#3a7bd5><bold>Icewhisper</bold></gradient>",
+    "model": "minecraft:item/icewhisper",
+    "model_name": "icewhisper",
+    "tier": "honoured"
+  },
+  {
+    "key": "magi_scythe",
+    "name": "Magi Scythe",
+    "category": "SWORD",
+    "color_format": "<gradient:#b5179e:#7209b7><bold>Magi Scythe</bold></gradient>",
+    "model": "minecraft:item/magiscythe",
+    "model_name": "magiscythe",
+    "tier": "honoured"
+  },
+  {
+    "key": "arcanethyst",
+    "name": "Arcanethyst",
+    "category": "SWORD",
+    "color_format": "<gradient:#7b2cbf:#9d4edd><bold>Arcanethyst</bold></gradient>",
+    "model": "minecraft:item/arcanethyst",
+    "model_name": "arcanethyst",
+    "tier": "honoured"
+  },
+  {
+    "key": "awakened_lichblade",
+    "name": "Awakened Lichblade",
+    "category": "SWORD",
+    "color_format": "<gradient:#11998e:#38ef7d><bold>Awakened Lichblade</bold></gradient>",
+    "model": "minecraft:item/awakened_lichblade",
+    "model_name": "awakened_lichblade",
+    "tier": "revered"
+  },
+  {
+    "key": "bramblethorn",
+    "name": "Bramblethorn",
+    "category": "SWORD",
+    "color_format": "<gradient:#0ba360:#3cba92><bold>Bramblethorn</bold></gradient>",
+    "model": "minecraft:item/bramblethorn",
+    "model_name": "bramblethorn",
+    "tier": "friendly"
+  },
+  {
+    "key": "brimstone_claymore",
+    "name": "Brimstone Claymore",
+    "category": "SWORD",
+    "color_format": "<gradient:#d90429:#ef233c><bold>Brimstone Claymore</bold></gradient>",
+    "model": "minecraft:item/brimstone_claymore",
+    "model_name": "brimstone_claymore",
+    "tier": "honoured"
+  },
+  {
+    "key": "emberblade",
+    "name": "Emberblade",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff3838:#ff9f1a><bold>Emberblade</bold></gradient>",
+    "model": "minecraft:item/emberblade",
+    "model_name": "emberblade",
+    "tier": "friendly"
+  },
+  {
+    "key": "true_excalibur",
+    "name": "True Excalibur",
+    "category": "SWORD",
+    "color_format": "<gradient:#f7ba2c:#ea5455><bold>True Excalibur</bold></gradient>",
+    "model": "minecraft:item/excalibur",
+    "model_name": "excalibur",
+    "tier": "revered"
+  },
+  {
+    "key": "requiem_of_the_ninth_abyss",
+    "name": "Requiem of the Ninth Abyss",
+    "category": "SWORD",
+    "color_format": "<gradient:#3a1c71:#d76d77><bold>Requiem of the Ninth Abyss</bold></gradient>",
+    "model": "minecraft:item/requiem_of_hell",
+    "model_name": "requiem_of_hell",
+    "tier": "exalted"
+  },
+  {
+    "key": "thermal_katana",
+    "name": "Thermal Katana",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff007f:#ff8c00><bold>Thermal Katana</bold></gradient>",
+    "model": "minecraft:cyberpack_models/katana",
+    "model_name": "katana",
+    "tier": "revered"
+  },
+  {
+    "key": "jinchu_maru",
+    "name": "Jinchu-Maru",
+    "category": "SWORD",
+    "color_format": "<gradient:#38ef7d:#11998e><bold>Jinchu-Maru</bold></gradient>",
+    "model": "minecraft:cyberpack_models/jinchu_maru",
+    "model_name": "jinchu_maru",
+    "tier": "revered"
+  },
+  {
+    "key": "errata",
+    "name": "Errata",
+    "category": "SWORD",
+    "color_format": "<gradient:#ff0844:#ffb199><bold>Errata</bold></gradient>",
+    "model": "minecraft:cyberpack_models/errata",
+    "model_name": "errata",
+    "tier": "exalted"
+  },
+  {
+    "key": "hatred",
+    "name": "Hatred",
+    "category": "AXE",
+    "color_format": "<gradient:#990000:#ff0055><bold>Hatred</bold></gradient>",
+    "model": "minecraft:cyberpack_models/chainsaw",
+    "model_name": "chainsaw",
+    "tier": "revered"
+  },
+  {
+    "key": "data_reaper",
+    "name": "Data Reaper",
+    "category": "AXE",
+    "color_format": "<gradient:#00f5d4:#7b2cbf><bold>Data Reaper</bold></gradient>",
+    "model": "minecraft:cyberpack_models/axe",
+    "model_name": "axe",
+    "tier": "revered"
+  },
+  {
+    "key": "tomahawk",
+    "name": "Tomahawk",
+    "category": "AXE",
+    "color_format": "<gradient:#ff512f:#dd2476><bold>Tomahawk</bold></gradient>",
+    "model": "minecraft:cyberpack_models/tomahawk",
+    "model_name": "tomahawk",
+    "tier": "friendly"
+  },
+  {
+    "key": "sasquatchs_hammer",
+    "name": "Sasquatch's Hammer",
+    "category": "MACE",
+    "color_format": "<gradient:#f857a6:#ff5858><bold>Sasquatch's Hammer</bold></gradient>",
+    "model": "minecraft:cyberpack_models/hammer",
+    "model_name": "hammer",
+    "tier": "revered"
+  },
+  {
+    "key": "arcanedge",
+    "name": "Arcanedge",
+    "category": "PICKAXE",
+    "color_format": "<gradient:#4facfe:#00f2fe><bold>Arcanedge</bold></gradient>",
+    "model": "minecraft:cyberpack_models/pickaxe",
+    "model_name": "pickaxe",
+    "tier": "friendly"
+  },
+  {
+    "key": "titanic_red",
+    "name": "Titanic Red",
+    "category": "PICKAXE",
+    "color_format": "<gradient:#eb3349:#f45c43><bold>Titanic Red</bold></gradient>",
+    "model": "minecraft:cyberpack_models/pickaxe2",
+    "model_name": "pickaxe2",
+    "tier": "honoured"
+  },
+  {
+    "key": "techno_spade",
+    "name": "Techno Spade",
+    "category": "SHOVEL",
+    "color_format": "<gradient:#0575e6:#00f260><bold>Techno Spade</bold></gradient>",
+    "model": "minecraft:cyberpack_models/shovel",
+    "model_name": "shovel",
+    "tier": "friendly"
+  },
+  {
+    "key": "caretakers_spade",
+    "name": "Caretaker's Spade",
+    "category": "SHOVEL",
+    "color_format": "<gradient:#6a11cb:#2575fc><bold>Caretaker's Spade</bold></gradient>",
+    "model": "minecraft:cyberpack_models/spade",
+    "model_name": "spade",
+    "tier": "honoured"
+  },
+  {
+    "key": "fang",
+    "name": "Fang",
+    "category": "TRIDENT",
+    "color_format": "<gradient:#00c6ff:#0072ff><bold>Fang</bold></gradient>",
+    "model": "minecraft:cyberpack_models/spear",
+    "model_name": "spear",
+    "tier": "revered"
+  },
+  {
+    "key": "archangel",
+    "name": "Archangel",
+    "category": "BOW",
+    "color_format": "<gradient:#ffe259:#ffa751><bold>Archangel</bold></gradient>",
+    "model": "minecraft:cyberpack_models/revolver",
+    "model_name": "revolver",
+    "tier": "friendly"
+  }
+]

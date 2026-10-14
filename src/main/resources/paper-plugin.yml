@@ -1,0 +1,234 @@
+name: MoonlightVanillaSurvivalCore
+version: '1.0.0-SNAPSHOT'
+main: com.moonlight.vanilla.MoonlightVanillaSurvivalCore
+api-version: '1.21'
+author: MoonlightVanilla
+description: Clean-Room Vanilla Survival Core for Paper 26.2 with Homes, TPA, Crossplay, and Audit Logging
+
+permissions:
+  moonlight.*:
+    description: Full wildcard access to all Moonlight commands and features
+    default: op
+    children:
+      moonlight.admin: true
+      moonlight.staff: true
+      moonlight.player: true
+      moonlight.features.*: true
+
+  moonlight.admin:
+    description: Master administrative access for Server Owners and Head Admins
+    default: op
+    children:
+      moonlight.core.admin: true
+      moonlight.staff: true
+      moonlight.logs.view: true
+      moonlight.audit.invsee: true
+      moonlight.audit.enderchest: true
+      moonlight.homes.unlimited: true
+      moonlight.tpa.bypass.cooldown: true
+      moonlight.tpa.bypass.warmup: true
+      moonlight.noafkkick: true
+      moonlight.pv.*: true
+      moonlight.workbench: true
+      moonlight.hat: true
+      moonlight.repair: true
+      moonlight.keepxp: true
+
+  moonlight.core.admin:
+    description: Core administrator rights, /changename, and bypass strict anti-auto-op
+    default: op
+
+  moonlight.staff:
+    description: Full staff moderation bundle for Trial Helpers, Mods, and Admins
+    default: op
+    children:
+      moonlight.staff.shelp: true
+      moonlight.staff.kick: true
+      moonlight.staff.mute: true
+      moonlight.staff.unmute: true
+      moonlight.staff.ban: true
+      moonlight.staff.baninfo: true
+      moonlight.staff.chat: true
+      moonlight.staff.bypass: true
+      moonlight.audit.invsee: true
+      moonlight.audit.enderchest: true
+      moonlight.logs.view: true
+
+  moonlight.staff.shelp:
+    description: Access to /shelp staff command handbook and operational guide
+    default: op
+  moonlight.staff.kick:
+    description: Allows kicking players with /kick and viewing kick alerts
+    default: op
+  moonlight.staff.mute:
+    description: Allows muting players with /mute
+    default: op
+  moonlight.staff.unmute:
+    description: Allows unmuting players with /unmute
+    default: op
+  moonlight.staff.ban:
+    description: Allows issuing temporary bans (up to 3 days)
+    default: op
+  moonlight.staff.ban.permanent:
+    description: Allows issuing permanent bans with /ban
+    default: op
+  moonlight.staff.unban:
+    description: Allows pardoning bans with /unban
+    default: op
+  moonlight.staff.baninfo:
+    description: Allows checking ban history and live countdowns with /baninfo
+    default: op
+  moonlight.staff.bypass:
+    description: Protects staff from being muted or punished by lower staff
+    default: op
+  moonlight.staff.chat:
+    description: Access to internal staff chat and staff broadcast notifications
+    default: op
+
+  moonlight.logs.view:
+    description: Deep audit logging, player transaction history, and snapshot inspector (/logs)
+    default: op
+  moonlight.audit.invsee:
+    description: Inspect and interact live with online player inventories (/inv, /invsee)
+    default: op
+  moonlight.audit.enderchest:
+    description: Inspect and interact live with online player Ender Chests (/ec <player>)
+    default: op
+
+  moonlight.player:
+    description: Standard player permission bundle granted to all survival players
+    default: true
+    children:
+      moonlight.homes.use: true
+      moonlight.tpa.use: true
+      moonlight.tpa.here: true
+      moonlight.ec: true
+      moonlight.scoreboard.use: true
+      moonlight.chat.msg: true
+      moonlight.hub.use: true
+      moonlight.server.use: true
+      moonlight.bedrock.use: true
+      moonlight.rules: true
+      moonlight.link: true
+      moonlight.weblink: true
+      moonlight.discord: true
+      moonlight.dc: true
+      moonlight.ranks: true
+      moonlight.help: true
+      moonlight.yt: true
+
+  moonlight.homes.use:
+    description: Allows using personal homes (/sethome, /home, /delhome, /homes)
+    default: true
+  moonlight.homes.unlimited:
+    description: Grants unlimited homes to the player
+    default: op
+
+  moonlight.tpa.use:
+    description: Allows sending and managing teleport requests (/tpa, /tpaccept, /tpdeny, /tpacancel)
+    default: true
+  moonlight.tpa.here:
+    description: Allows requesting another player to teleport to you (/tpahere)
+    default: true
+  moonlight.tpa.bypass.cooldown:
+    description: Bypasses TPA request cooldown timer
+    default: op
+  moonlight.tpa.bypass.warmup:
+    description: Bypasses TPA teleport warmup timer
+    default: op
+
+  moonlight.ec:
+    description: Allows opening personal Ender Chest (/ec, /enderchest)
+    default: true
+  moonlight.scoreboard.use:
+    description: Allows toggling and configuring sidebar scoreboard (/sb, /scoreboard)
+    default: true
+  moonlight.chat.msg:
+    description: Allows sending private direct messages (/msg, /tell, /w, /reply, /r)
+    default: true
+  moonlight.hub.use:
+    description: Allows connecting to the lobby (/hub, /lobby)
+    default: true
+  moonlight.server.use:
+    description: Allows switching servers or checking network mode (/server)
+    default: true
+  moonlight.bedrock.use:
+    description: Allows accessing Bedrock touch quick menu and crossplay info (/bedrock)
+    default: true
+  moonlight.rules:
+    description: Allows viewing official server rules (/rules, /mrules, /rulebook)
+    default: true
+  moonlight.link:
+    description: Allows viewing official website link (/link, /weblink, /website)
+    default: true
+  moonlight.weblink:
+    description: Allows viewing official website link (/weblink)
+    default: true
+  moonlight.discord:
+    description: Allows viewing official Discord invite link (/discord, /dc)
+    default: true
+  moonlight.dc:
+    description: Allows viewing official Discord invite link (/dc)
+    default: true
+  moonlight.ranks:
+    description: Allows viewing paid supporter ranks GUI and perk details (/ranks, /rank)
+    default: true
+  moonlight.help:
+    description: Allows viewing player guide and command handbook (/help)
+    default: true
+  moonlight.yt:
+    description: Allows browsing community YouTube videos directory (/yt, /youtube)
+    default: true
+
+  moonlight.features.*:
+    description: All donor and quality-of-life feature commands
+    default: op
+    children:
+      moonlight.workbench: true
+      moonlight.hat: true
+      moonlight.repair: true
+      moonlight.keepxp: true
+      moonlight.noafkkick: true
+      moonlight.pv.*: true
+
+  moonlight.workbench:
+    description: Opens virtual workbench on demand (/wb, /workbench)
+    default: op
+  moonlight.hat:
+    description: Wear items as a hat (/hat)
+    default: op
+  moonlight.repair:
+    description: Repair item in main hand (/repair)
+    default: op
+  moonlight.keepxp:
+    description: Keeps player experience levels and points upon death
+    default: op
+  moonlight.noafkkick:
+    description: Bypasses automatic AFK kicker
+    default: op
+
+  moonlight.pv.*:
+    description: Unlocks all 5 player vaults (/pv 1-5)
+    default: op
+    children:
+      moonlight.pv.1: true
+      moonlight.pv.2: true
+      moonlight.pv.3: true
+      moonlight.pv.4: true
+      moonlight.pv.5: true
+
+  moonlight.pv.1:
+    description: Access to Player Vault 1 (/pv 1)
+    default: op
+  moonlight.pv.2:
+    description: Access to Player Vault 2 (/pv 2)
+    default: op
+  moonlight.pv.3:
+    description: Access to Player Vault 3 (/pv 3)
+    default: op
+  moonlight.pv.4:
+    description: Access to Player Vault 4 (/pv 4)
+    default: op
+  moonlight.pv.5:
+    description: Access to Player Vault 5 (/pv 5)
+    default: op
