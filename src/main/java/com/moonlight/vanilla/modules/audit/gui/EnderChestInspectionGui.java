@@ -22,9 +22,9 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitTask;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +42,7 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
     private final String timestamp;
     private final boolean isLive;
     private final Player liveTarget;
-    private org.bukkit.scheduler.BukkitTask liveSyncTask;
+    private BukkitTask liveSyncTask;
 
     public EnderChestInspectionGui(MoonlightVanillaSurvivalCore plugin, String targetPlayerName, String snapshotId, String timestamp, ItemStack[] echestContents, boolean isLive, Player liveTarget) {
         this.plugin = plugin;
@@ -52,9 +52,7 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
         this.isLive = isLive;
         this.liveTarget = liveTarget;
 
-        Component title = MiniMessage.miniMessage().deserialize(
-                "<white>" + targetPlayerName + "'s Ender Chest</white>");
-        this.inventory = Bukkit.createInventory(this, 36, title);
+        this.inventory = Bukkit.createInventory(this, 36, mm("<white>" + targetPlayerName + "'s Ender Chest</white>"));
 
         // Slots 0-26: The 27 Ender Chest slots
         if (echestContents != null) {
@@ -79,20 +77,16 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
         // Slot 31: Time Shower / Info item (Protected)
         ItemStack info = new ItemStack(isLive ? Material.NETHER_STAR : Material.CLOCK);
         ItemMeta meta = info.getItemMeta();
-        meta.displayName(MiniMessage.miniMessage().deserialize(isLive ? "<light_purple><bold>Live Ender Chest</bold></light_purple>" : "<light_purple><bold>Ender Chest Time</bold></light_purple>"));
-        List<Component> lore = new ArrayList<>();
-        lore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
-        lore.add(MiniMessage.miniMessage().deserialize("<gray>Player: <white>" + targetPlayerName + "</white></gray>"));
-        lore.add(MiniMessage.miniMessage().deserialize("<gray>Timestamp: <yellow>" + this.timestamp + "</yellow></gray>"));
-        if (!isLive) {
-            lore.add(MiniMessage.miniMessage().deserialize("<gray>Snapshot ID: <yellow>" + this.snapshotId + "</yellow></gray>"));
-        } else {
-            lore.add(MiniMessage.miniMessage().deserialize("<gray>Status: <green>Online</green></gray>"));
-        }
-        lore.add(MiniMessage.miniMessage().deserialize("<green><bold>• Taking Items: ENABLED</bold></green>"));
-        lore.add(MiniMessage.miniMessage().deserialize("<red><bold>• Placing Items: DISABLED</bold></red>"));
-        lore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
-        meta.lore(lore);
+        meta.displayName(mm(isLive ? "<light_purple><bold>Live Ender Chest</bold></light_purple>" : "<light_purple><bold>Ender Chest Time</bold></light_purple>"));
+        meta.lore(List.of(
+                mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>"),
+                mm("<gray>Player: <white>" + targetPlayerName + "</white></gray>"),
+                mm("<gray>Timestamp: <yellow>" + this.timestamp + "</yellow></gray>"),
+                isLive ? mm("<gray>Status: <green>Online</green></gray>") : mm("<gray>Snapshot ID: <yellow>" + this.snapshotId + "</yellow></gray>"),
+                mm("<green><bold>• Taking Items: ENABLED</bold></green>"),
+                mm("<red><bold>• Placing Items: DISABLED</bold></red>"),
+                mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>")
+        ));
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         info.setItemMeta(meta);
         inventory.setItem(31, info);
@@ -108,6 +102,10 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
         this(plugin, targetPlayerName, snapshotId, timestamp, echestContents, false, null);
     }
 
+    private static Component mm(String text) {
+        return MiniMessage.miniMessage().deserialize(text);
+    }
+
     @Override
     public @NotNull Inventory getInventory() {
         return inventory;
@@ -115,49 +113,35 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
     public void onInventoryClick(InventoryClickEvent event) {
-        if (event.getInventory().getHolder() != this) {
-            return;
-        }
-
-        if (!(event.getWhoClicked() instanceof Player opPlayer)) {
-            return;
-        }
+        if (event.getInventory().getHolder() != this) return;
+        if (!(event.getWhoClicked() instanceof Player opPlayer)) return;
 
         if (!LogsCommand.isAuthorized(opPlayer)) {
             event.setCancelled(true);
             opPlayer.closeInventory();
-            opPlayer.sendMessage(MiniMessage.miniMessage().deserialize("<red>Access denied: You must be staff or OP to inspect Ender Chest logs.</red>"));
+            opPlayer.sendMessage(mm("<red>Access denied: You must be staff or OP to inspect Ender Chest logs.</red>"));
             return;
         }
 
         int rawSlot = event.getRawSlot();
-        ItemStack currentItem = event.getCurrentItem();
+        if (rawSlot < 0) return;
 
-        // -------------------------------------------------------------
-        // CLICK IN PLAYER'S PERSONAL INVENTORY (rawSlot >= 36)
-        // -------------------------------------------------------------
+        // Staff personal inventory below: block shift-clicking into Ender Chest
         if (rawSlot >= 36) {
-            // Prevent shift-clicking items from staff inventory into the Ender Chest
             if (event.isShiftClick() || event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY) {
                 event.setCancelled(true);
             }
             return;
         }
 
-        if (rawSlot < 0) {
-            return;
-        }
-
-        // -------------------------------------------------------------
-        // CLICK IN TOP GUI: SLOTS 27-35 ARE PROTECTED SYSTEM ITEMS
-        // -------------------------------------------------------------
-        if (rawSlot >= 27 && rawSlot < 36) {
+        // Protected system slots (27-35)
+        if (rawSlot >= 27) {
             event.setCancelled(true);
             opPlayer.playSound(opPlayer.getLocation(), Sound.UI_BUTTON_CLICK, 0.6f, 0.9f);
             return;
         }
 
-        // Prevent placing items into the Ender Chest
+        // Prevent placing/swapping into Ender Chest
         if (event.getAction() == InventoryAction.PLACE_ALL ||
                 event.getAction() == InventoryAction.PLACE_SOME ||
                 event.getAction() == InventoryAction.PLACE_ONE ||
@@ -168,17 +152,17 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
             return;
         }
 
-        // Prevent dropping cursor items into the Ender Chest
+        // Prevent dropping cursor item
         if (event.getCursor() != null && event.getCursor().getType() != Material.AIR) {
             event.setCancelled(true);
             return;
         }
 
-        // Taking items is ALLOWED:
+        // Taking items is allowed
+        ItemStack currentItem = event.getCurrentItem();
         if (currentItem != null && currentItem.getType() != Material.AIR) {
             opPlayer.playSound(opPlayer.getLocation(), Sound.ENTITY_ITEM_PICKUP, 0.7f, 1.4f);
 
-            // Sync removal to online player if in live mode
             if (isLive && liveTarget != null && liveTarget.isOnline()) {
                 final int clickedSlot = rawSlot;
                 Bukkit.getScheduler().runTask(plugin, () -> {
@@ -193,25 +177,13 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = false)
     public void onInventoryDrag(InventoryDragEvent event) {
-        if (event.getInventory().getHolder() == this) {
-            for (int slot : event.getRawSlots()) {
-                if (slot < 36) {
-                    event.setCancelled(true);
-                    return;
-                }
-            }
+        if (event.getInventory().getHolder() == this && event.getRawSlots().stream().anyMatch(slot -> slot < 36)) {
+            event.setCancelled(true);
         }
     }
 
     private void syncLiveFromTarget() {
-        if (!isLive || liveTarget == null || !liveTarget.isOnline()) {
-            if (liveSyncTask != null) {
-                liveSyncTask.cancel();
-                liveSyncTask = null;
-            }
-            return;
-        }
-        if (inventory.getViewers().isEmpty()) {
+        if (!isLive || liveTarget == null || !liveTarget.isOnline() || inventory.getViewers().isEmpty()) {
             if (liveSyncTask != null) {
                 liveSyncTask.cancel();
                 liveSyncTask = null;
@@ -219,11 +191,10 @@ public class EnderChestInspectionGui implements InventoryHolder, Listener {
             return;
         }
 
-        // Sync slots 0..26 with live target's ender chest
         Inventory echest = liveTarget.getEnderChest();
         for (int i = 0; i < 27; i++) {
             ItemStack targetItem = echest.getItem(i);
-            inventory.setItem(i, (targetItem != null && targetItem.getType() != Material.AIR) ? targetItem.clone() : null);
+            inventory.setItem(i, targetItem != null && targetItem.getType() != Material.AIR ? targetItem.clone() : null);
         }
     }
 

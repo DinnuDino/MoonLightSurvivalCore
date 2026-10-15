@@ -33,6 +33,21 @@ import java.util.List;
  */
 public class TimeInputGui implements InventoryHolder, Listener {
 
+    private record TimePreset(int slot, Material material, String title, String sub, long minusSeconds, String label) {}
+
+    private static final List<TimePreset> PRESETS = List.of(
+            new TimePreset(10, Material.NETHER_STAR, "<gradient:#a7f3d0:#34d399><bold>⚡ LATEST / NOW</bold></gradient>", "<gray>Query live or most recent records</gray>", 0, "Latest"),
+            new TimePreset(11, Material.FEATHER, "<gradient:#fcd34d:#f59e0b><bold>⏱ 5 MINUTES AGO</bold></gradient>", "<gray>Quick rewind 5 minutes back</gray>", 300, "5 Minutes Ago"),
+            new TimePreset(12, Material.CLOCK, "<gradient:#e879f9:#c084fc><bold>⏱ 15 MINUTES AGO</bold></gradient>", "<gray>Quick rewind 15 minutes back</gray>", 900, "15 Minutes Ago"),
+            new TimePreset(13, Material.COMPASS, "<gradient:#60a5fa:#3b82f6><bold>⏱ 1 HOUR AGO</bold></gradient>", "<gray>Quick rewind 1 hour back</gray>", 3600, "1 Hour Ago"),
+            new TimePreset(14, Material.SPYGLASS, "<gradient:#c084fc:#a855f7><bold>⏱ 6 HOURS AGO</bold></gradient>", "<gray>Quick rewind 6 hours back</gray>", 21600, "6 Hours Ago"),
+            new TimePreset(15, Material.BOOK, "<gradient:#f472b6:#ec4899><bold>⏱ 12 HOURS AGO</bold></gradient>", "<gray>Quick rewind 12 hours back</gray>", 43200, "12 Hours Ago"),
+            new TimePreset(16, Material.ENDER_EYE, "<gradient:#fb7185:#e11d48><bold>⏱ 24 HOURS AGO (1 DAY)</bold></gradient>", "<gray>Quick rewind 24 hours back</gray>", 86400, "24 Hours Ago"),
+            new TimePreset(22, Material.RECOVERY_COMPASS, "<gradient:#a78bfa:#818cf8><bold>⏱ 7 DAYS AGO (1 WEEK)</bold></gradient>", "<gray>Quick rewind 7 days back</gray>", 604800, "7 Days Ago")
+    );
+
+    private static final int[] BORDER_SLOTS = {0, 1, 2, 3, 5, 6, 7, 8, 9, 17, 19, 21, 23, 25};
+
     private final MoonlightVanillaSurvivalCore plugin;
     private final LogsInteractiveGui logsGui;
     private final Player staffPlayer;
@@ -47,78 +62,55 @@ public class TimeInputGui implements InventoryHolder, Listener {
         this.category = category;
         this.targetPlayerName = targetPlayerName;
 
-        Component title = MiniMessage.miniMessage().deserialize(
-                "<gradient:#c084fc:#f472b6><bold>▶ SELECT TIME</bold></gradient> <dark_gray>▪</dark_gray> <gray>" + targetPlayerName + "</gray>");
-        this.inventory = Bukkit.createInventory(this, 27, title);
+        this.inventory = Bukkit.createInventory(this, 27, mm(
+                "<gradient:#c084fc:#f472b6><bold>▶ SELECT TIME</bold></gradient> <dark_gray>▪</dark_gray> <gray>" + targetPlayerName + "</gray>"));
 
         buildGui();
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
+    private static Component mm(String text) {
+        return MiniMessage.miniMessage().deserialize(text);
+    }
+
+    private static ItemStack createPane(Material material) {
+        ItemStack pane = new ItemStack(material);
+        ItemMeta meta = pane.getItemMeta();
+        meta.displayName(Component.empty());
+        pane.setItemMeta(meta);
+        return pane;
+    }
+
     private void buildGui() {
-        // Aesthetic border filler
-        ItemStack filler = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
-        ItemMeta fillerMeta = filler.getItemMeta();
-        fillerMeta.displayName(Component.empty());
-        filler.setItemMeta(fillerMeta);
+        ItemStack filler = createPane(Material.BLACK_STAINED_GLASS_PANE);
+        ItemStack border = createPane(Material.PURPLE_STAINED_GLASS_PANE);
 
-        ItemStack border = new ItemStack(Material.PURPLE_STAINED_GLASS_PANE);
-        ItemMeta borderMeta = border.getItemMeta();
-        borderMeta.displayName(Component.empty());
-        border.setItemMeta(borderMeta);
-
-        for (int i = 0; i < 27; i++) {
-            inventory.setItem(i, filler);
-        }
-        for (int i = 0; i < 9; i++) {
-            if (i != 4) inventory.setItem(i, border);
-        }
-        inventory.setItem(9, border);
-        inventory.setItem(17, border);
-        inventory.setItem(19, border);
-        inventory.setItem(21, border);
-        inventory.setItem(23, border);
-        inventory.setItem(25, border);
+        for (int i = 0; i < 27; i++) inventory.setItem(i, filler);
+        for (int slot : BORDER_SLOTS) inventory.setItem(slot, border);
 
         // Slot 4: Info Clock
         ItemStack clock = new ItemStack(Material.CLOCK);
         ItemMeta clockMeta = clock.getItemMeta();
-        clockMeta.displayName(MiniMessage.miniMessage().deserialize("<gradient:#e879f9:#c084fc><bold>AUDIT TIME SELECTION</bold></gradient>"));
-        List<Component> clockLore = new ArrayList<>();
-        clockLore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
-        clockLore.add(MiniMessage.miniMessage().deserialize("<gray>Target Player: <white>" + targetPlayerName + "</white></gray>"));
-        clockLore.add(MiniMessage.miniMessage().deserialize("<gray>Category: <aqua>" + category.getDisplayName() + "</aqua></gray>"));
-        clockLore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
-        clockLore.add(MiniMessage.miniMessage().deserialize("<gray>Select a fast 1-click preset below, or choose</gray>"));
-        clockLore.add(MiniMessage.miniMessage().deserialize("<gray>to type directly via <aqua>GUI text box</aqua> or <light_purple>Chat</light_purple>.</gray>"));
-        clockMeta.lore(clockLore);
+        clockMeta.displayName(mm("<gradient:#e879f9:#c084fc><bold>AUDIT TIME SELECTION</bold></gradient>"));
+        clockMeta.lore(List.of(
+                mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>"),
+                mm("<gray>Target Player: <white>" + targetPlayerName + "</white></gray>"),
+                mm("<gray>Category: <aqua>" + category.getDisplayName() + "</aqua></gray>"),
+                mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>"),
+                mm("<gray>Select a fast 1-click preset below, or choose</gray>"),
+                mm("<gray>to type directly via <aqua>GUI text box</aqua> or <light_purple>Chat</light_purple>.</gray>")
+        ));
         clockMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         clock.setItemMeta(clockMeta);
         inventory.setItem(4, clock);
 
-        // Row 1: Fast 1-Click Presets (Slots 10 to 16)
-        inventory.setItem(10, buildBtn(Material.NETHER_STAR, "<gradient:#a7f3d0:#34d399><bold>⚡ LATEST / NOW</bold></gradient>",
-                List.of("<gray>Query live or most recent records</gray>", "<green>CLICK TO SELECT</green>")));
+        // Presets (Slots 10-16, 22)
+        for (var preset : PRESETS) {
+            inventory.setItem(preset.slot(), buildBtn(preset.material(), preset.title(),
+                    List.of(preset.sub(), "<green>CLICK TO SELECT</green>")));
+        }
 
-        inventory.setItem(11, buildBtn(Material.FEATHER, "<gradient:#fcd34d:#f59e0b><bold>⏱ 5 MINUTES AGO</bold></gradient>",
-                List.of("<gray>Quick rewind 5 minutes back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        inventory.setItem(12, buildBtn(Material.CLOCK, "<gradient:#e879f9:#c084fc><bold>⏱ 15 MINUTES AGO</bold></gradient>",
-                List.of("<gray>Quick rewind 15 minutes back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        inventory.setItem(13, buildBtn(Material.COMPASS, "<gradient:#60a5fa:#3b82f6><bold>⏱ 1 HOUR AGO</bold></gradient>",
-                List.of("<gray>Quick rewind 1 hour back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        inventory.setItem(14, buildBtn(Material.SPYGLASS, "<gradient:#c084fc:#a855f7><bold>⏱ 6 HOURS AGO</bold></gradient>",
-                List.of("<gray>Quick rewind 6 hours back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        inventory.setItem(15, buildBtn(Material.BOOK, "<gradient:#f472b6:#ec4899><bold>⏱ 12 HOURS AGO</bold></gradient>",
-                List.of("<gray>Quick rewind 12 hours back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        inventory.setItem(16, buildBtn(Material.ENDER_EYE, "<gradient:#fb7185:#e11d48><bold>⏱ 24 HOURS AGO (1 DAY)</bold></gradient>",
-                List.of("<gray>Quick rewind 24 hours back</gray>", "<green>CLICK TO SELECT</green>")));
-
-        // Row 2: Action Controls & Direct Typable Inputs (Slots 18, 20, 22, 24, 26)
+        // Action Controls & Direct Typable Inputs (Slots 18, 20, 24, 26)
         inventory.setItem(18, buildBtn(Material.ARROW, "<gold><bold>« BACK TO MENU</bold></gold>",
                 List.of("<gray>Return to Stage 3 time overview</gray>", "<yellow>CLICK TO RETURN</yellow>")));
 
@@ -126,9 +118,6 @@ public class TimeInputGui implements InventoryHolder, Listener {
                 List.of("<gray>Type directly inside a GUI text box!</gray>",
                         "<gray>Supports: <yellow>10m</yellow>, <yellow>1h</yellow>, <yellow>12h</yellow>, <yellow>1d</yellow>, <yellow>15:30:00</yellow></gray>",
                         "<aqua>CLICK TO OPEN GUI TEXTBOX</aqua>")));
-
-        inventory.setItem(22, buildBtn(Material.RECOVERY_COMPASS, "<gradient:#a78bfa:#818cf8><bold>⏱ 7 DAYS AGO (1 WEEK)</bold></gradient>",
-                List.of("<gray>Quick rewind 7 days back</gray>", "<green>CLICK TO SELECT</green>")));
 
         inventory.setItem(24, buildBtn(Material.WRITABLE_BOOK, "<gradient:#ec4899:#db2777><bold>💬 TYPE IN CHAT (AUTHME STYLE)</bold></gradient>",
                 List.of("<gray>Prompts you in chat just like AuthMe login!</gray>",
@@ -142,13 +131,13 @@ public class TimeInputGui implements InventoryHolder, Listener {
     private ItemStack buildBtn(Material material, String nameMiniMsg, List<String> loreLines) {
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
-        meta.displayName(MiniMessage.miniMessage().deserialize(nameMiniMsg));
+        meta.displayName(mm(nameMiniMsg));
         List<Component> lore = new ArrayList<>();
-        lore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
+        lore.add(mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
         for (String line : loreLines) {
-            lore.add(MiniMessage.miniMessage().deserialize(line));
+            lore.add(mm(line));
         }
-        lore.add(MiniMessage.miniMessage().deserialize("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
+        lore.add(mm("<dark_gray>▪ --------------------------------- ▪</dark_gray>"));
         meta.lore(lore);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         item.setItemMeta(meta);
@@ -174,53 +163,20 @@ public class TimeInputGui implements InventoryHolder, Listener {
 
         player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 0.7f, 1.2f);
 
+        for (var preset : PRESETS) {
+            if (preset.slot() == slot) {
+                player.closeInventory();
+                Instant targetTime = preset.minusSeconds() == 0 ? Instant.now() : Instant.now().minusSeconds(preset.minusSeconds());
+                logsGui.executeCategoryAction(player, category, targetPlayerName, targetTime, preset.label());
+                return;
+            }
+        }
+
         switch (slot) {
-            case 10 -> { // Latest / Now
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now(), "Latest");
-            }
-            case 11 -> { // 5m Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(300), "5 Minutes Ago");
-            }
-            case 12 -> { // 15m Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(900), "15 Minutes Ago");
-            }
-            case 13 -> { // 1h Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(3600), "1 Hour Ago");
-            }
-            case 14 -> { // 6h Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(21600), "6 Hours Ago");
-            }
-            case 15 -> { // 12h Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(43200), "12 Hours Ago");
-            }
-            case 16 -> { // 24h Ago (1d)
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(86400), "24 Hours Ago");
-            }
-            case 18 -> { // Back
-                player.closeInventory();
-                logsGui.openStage3(player, category, targetPlayerName);
-            }
-            case 20 -> { // Direct Anvil Input GUI
-                player.closeInventory();
-                new AnvilTimeInput(plugin, logsGui, player, category, targetPlayerName).open();
-            }
-            case 22 -> { // 7d Ago
-                player.closeInventory();
-                logsGui.executeCategoryAction(player, category, targetPlayerName, Instant.now().minusSeconds(604800), "7 Days Ago");
-            }
-            case 24 -> { // Direct AuthMe-style Chat Prompt
-                logsGui.promptChatTime(player, category, targetPlayerName);
-            }
-            case 26 -> { // Close
-                player.closeInventory();
-            }
+            case 18 -> { player.closeInventory(); logsGui.openStage3(player, category, targetPlayerName); }
+            case 20 -> { player.closeInventory(); new AnvilTimeInput(plugin, logsGui, player, category, targetPlayerName).open(); }
+            case 24 -> logsGui.promptChatTime(player, category, targetPlayerName);
+            case 26 -> player.closeInventory();
             default -> {}
         }
     }

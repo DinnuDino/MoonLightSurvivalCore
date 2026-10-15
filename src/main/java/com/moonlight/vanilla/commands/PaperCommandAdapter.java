@@ -1,16 +1,3 @@
-/*
- * Decompiled with CFR 0.152.
- * 
- * Could not load the following classes:
- *  io.papermc.paper.command.brigadier.BasicCommand
- *  io.papermc.paper.command.brigadier.CommandSourceStack
- *  org.bukkit.command.Command
- *  org.bukkit.command.CommandExecutor
- *  org.bukkit.command.CommandSender
- *  org.bukkit.command.TabCompleter
- *  org.jetbrains.annotations.NotNull
- *  org.jetbrains.annotations.Nullable
- */
 package com.moonlight.vanilla.commands;
 
 import io.papermc.paper.command.brigadier.BasicCommand;
@@ -62,22 +49,12 @@ implements BasicCommand {
 
     @NotNull
     public Collection<String> suggest(@NotNull CommandSourceStack stack, @NotNull String[] args) {
-        if (this.tabCompleter != null) {
-            String[] stringArray;
-            if (args == null || args.length == 0) {
-                String[] stringArray2 = new String[1];
-                stringArray = stringArray2;
-                stringArray2[0] = "";
-            } else {
-                stringArray = args;
-            }
-            String[] effectiveArgs = stringArray;
-            List list = this.tabCompleter.onTabComplete(stack.getSender(), this.dummyCommand, this.name, effectiveArgs);
-            if (list != null) {
-                return list;
-            }
+        if (tabCompleter != null) {
+            String[] effectiveArgs = (args == null || args.length == 0) ? new String[]{""} : args;
+            List<String> list = tabCompleter.onTabComplete(stack.getSender(), dummyCommand, name, effectiveArgs);
+            if (list != null) return list;
         }
-        return Collections.emptyList();
+        return List.of();
     }
 
     @Nullable
