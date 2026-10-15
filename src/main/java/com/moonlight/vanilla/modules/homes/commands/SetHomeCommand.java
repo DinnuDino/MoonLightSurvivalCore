@@ -89,20 +89,22 @@ TabCompleter {
     }
 
     public static boolean canUseHomes(Player player) {
-        if (player.isOp() || player.hasPermission("moonlight.admin") || player.hasPermission("moonlight.player") || player.hasPermission("moonlight.homes.use") || player.hasPermission("moonlight.homes.*") || player.hasPermission("moonlight.sethome") || player.hasPermission("moonlight.home") || player.hasPermission("moonlight.delhome") || player.hasPermission("moonlight.homes") || player.hasPermission("moonlight.homes.sethome") || player.hasPermission("moonlight.homes.set") || player.hasPermission("moonlight.homes.tp") || player.hasPermission("essentials.sethome") || player.hasPermission("essentials.home") || player.hasPermission("essentials.delhome") || player.hasPermission("essentials.homes") || player.hasPermission("essentials.home.set") || player.hasPermission("cmi.command.sethome") || player.hasPermission("cmi.command.home")) {
+        if (player == null) return false;
+        if (player.isOp() || player.hasPermission("moonlight.admin") || player.hasPermission("moonlight.staff")) {
             return true;
         }
-        for (PermissionAttachmentInfo pai : player.getEffectivePermissions()) {
-            if (!pai.getValue() || !pai.getPermission().toLowerCase(Locale.ROOT).startsWith("moonlight.homes.")) continue;
-            return true;
-        }
+        // Deny only if explicitly negated in permissions
         if (player.isPermissionSet("moonlight.homes.use") && !player.hasPermission("moonlight.homes.use")) {
+            return false;
+        }
+        if (player.isPermissionSet("moonlight.home") && !player.hasPermission("moonlight.home")) {
             return false;
         }
         if (player.isPermissionSet("moonlight.sethome") && !player.hasPermission("moonlight.sethome")) {
             return false;
         }
-        return !player.isPermissionSet("moonlight.home") || player.hasPermission("moonlight.home");
+        // Enabled by default for all survival players
+        return true;
     }
 }
 

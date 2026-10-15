@@ -8271,6 +8271,450 @@
         "custom_model_data": 10132,
         "bedrock_item_model": "minecraft:item/handheld"
       }
+    ],
+    "minecraft:apple": [
+      {
+        "name": "Strawberry",
+        "bedrock_identifier": "customcrops:strawberry",
+        "display_name": "Strawberry",
+        "icon": "customcrops_strawberry",
+        "item_model": "customcrops:item/strawberry",
+        "custom_model_data": 10000,
+        "model": "customcrops:item/strawberry",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Strawberry Silver Star",
+        "bedrock_identifier": "customcrops:strawberry_silver_star",
+        "display_name": "Strawberry Silver Star",
+        "icon": "customcrops_strawberry_silver_star",
+        "item_model": "customcrops:item/strawberry_silver_star",
+        "custom_model_data": 10001,
+        "model": "customcrops:item/strawberry_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Strawberry Golden Star",
+        "bedrock_identifier": "customcrops:strawberry_golden_star",
+        "display_name": "Strawberry Golden Star",
+        "icon": "customcrops_strawberry_golden_star",
+        "item_model": "customcrops:item/strawberry_golden_star",
+        "custom_model_data": 10002,
+        "model": "customcrops:item/strawberry_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Turnip",
+        "bedrock_identifier": "customcrops:turnip",
+        "display_name": "Turnip",
+        "icon": "customcrops_turnip",
+        "item_model": "customcrops:item/turnip",
+        "custom_model_data": 10003,
+        "model": "customcrops:item/turnip",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Turnip Silver Star",
+        "bedrock_identifier": "customcrops:turnip_silver_star",
+        "display_name": "Turnip Silver Star",
+        "icon": "customcrops_turnip_silver_star",
+        "item_model": "customcrops:item/turnip_silver_star",
+        "custom_model_data": 10004,
+        "model": "customcrops:item/turnip_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Turnip Golden Star",
+        "bedrock_identifier": "customcrops:turnip_golden_star",
+        "display_name": "Turnip Golden Star",
+        "icon": "customcrops_turnip_golden_star",
+        "item_model": "customcrops:item/turnip_golden_star",
+        "custom_model_data": 10005,
+        "model": "customcrops:item/turnip_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Tomato",
+        "bedrock_identifier": "customcrops:tomato",
+        "display_name": "Tomato",
+        "icon": "customcrops_tomato",
+        "item_model": "customcrops:item/tomato",
+        "custom_model_data": 10006,
+        "model": "customcrops:item/tomato",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Tomato Silver Star",
+        "bedrock_identifier": "customcrops:tomato_silver_star",
+        "display_name": "Tomato Silver Star",
+        "icon": "customcrops_tomato_silver_star",
+        "item_model": "customcrops:item/tomato_silver_star",
+        "custom_model_data": 10007,
+        "model": "customcrops:item/tomato_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Tomato Golden Star",
+        "bedrock_identifier": "customcrops:tomato_golden_star",
+        "display_name": "Tomato Golden Star",
+        "icon": "customcrops_tomato_golden_star",
+        "item_model": "customcrops:item/tomato_golden_star",
+        "custom_model_data": 10008,
+        "model": "customcrops:item/tomato_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Corn",
+        "bedrock_identifier": "customcrops:corn",
+        "display_name": "Corn",
+        "icon": "customcrops_corn",
+        "item_model": "customcrops:item/corn",
+        "custom_model_data": 10009,
+        "model": "customcrops:item/corn",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Corn Silver Star",
+        "bedrock_identifier": "customcrops:corn_silver_star",
+        "display_name": "Corn Silver Star",
+        "icon": "customcrops_corn_silver_star",
+        "item_model": "customcrops:item/corn_silver_star",
+        "custom_model_data": 10010,
+        "model": "customcrops:item/corn_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Corn Golden Star",
+        "bedrock_identifier": "customcrops:corn_golden_star",
+        "display_name": "Corn Golden Star",
+        "icon": "customcrops_corn_golden_star",
+        "item_model": "customcrops:item/corn_golden_star",
+        "custom_model_data": 10011,
+        "model": "customcrops:item/corn_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Eggplant",
+        "bedrock_identifier": "customcrops:eggplant",
+        "display_name": "Eggplant",
+        "icon": "customcrops_eggplant",
+        "item_model": "customcrops:item/eggplant",
+        "custom_model_data": 10012,
+        "model": "customcrops:item/eggplant",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Eggplant Silver Star",
+        "bedrock_identifier": "customcrops:eggplant_silver_star",
+        "display_name": "Eggplant Silver Star",
+        "icon": "customcrops_eggplant_silver_star",
+        "item_model": "customcrops:item/eggplant_silver_star",
+        "custom_model_data": 10013,
+        "model": "customcrops:item/eggplant_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Eggplant Golden Star",
+        "bedrock_identifier": "customcrops:eggplant_golden_star",
+        "display_name": "Eggplant Golden Star",
+        "icon": "customcrops_eggplant_golden_star",
+        "item_model": "customcrops:item/eggplant_golden_star",
+        "custom_model_data": 10014,
+        "model": "customcrops:item/eggplant_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pineapple",
+        "bedrock_identifier": "customcrops:pineapple",
+        "display_name": "Pineapple",
+        "icon": "customcrops_pineapple",
+        "item_model": "customcrops:item/pineapple",
+        "custom_model_data": 10015,
+        "model": "customcrops:item/pineapple",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pineapple Silver Star",
+        "bedrock_identifier": "customcrops:pineapple_silver_star",
+        "display_name": "Pineapple Silver Star",
+        "icon": "customcrops_pineapple_silver_star",
+        "item_model": "customcrops:item/pineapple_silver_star",
+        "custom_model_data": 10016,
+        "model": "customcrops:item/pineapple_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pineapple Golden Star",
+        "bedrock_identifier": "customcrops:pineapple_golden_star",
+        "display_name": "Pineapple Golden Star",
+        "icon": "customcrops_pineapple_golden_star",
+        "item_model": "customcrops:item/pineapple_golden_star",
+        "custom_model_data": 10017,
+        "model": "customcrops:item/pineapple_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Grape",
+        "bedrock_identifier": "customcrops:grape",
+        "display_name": "Grape",
+        "icon": "customcrops_grape",
+        "item_model": "customcrops:item/grape",
+        "custom_model_data": 10018,
+        "model": "customcrops:item/grape",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Grape Silver Star",
+        "bedrock_identifier": "customcrops:grape_silver_star",
+        "display_name": "Grape Silver Star",
+        "icon": "customcrops_grape_silver_star",
+        "item_model": "customcrops:item/grape_silver_star",
+        "custom_model_data": 10019,
+        "model": "customcrops:item/grape_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Grape Golden Star",
+        "bedrock_identifier": "customcrops:grape_golden_star",
+        "display_name": "Grape Golden Star",
+        "icon": "customcrops_grape_golden_star",
+        "item_model": "customcrops:item/grape_golden_star",
+        "custom_model_data": 10020,
+        "model": "customcrops:item/grape_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Cabbage",
+        "bedrock_identifier": "customcrops:cabbage",
+        "display_name": "Cabbage",
+        "icon": "customcrops_cabbage",
+        "item_model": "customcrops:item/cabbage",
+        "custom_model_data": 10021,
+        "model": "customcrops:item/cabbage",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Cabbage Silver Star",
+        "bedrock_identifier": "customcrops:cabbage_silver_star",
+        "display_name": "Cabbage Silver Star",
+        "icon": "customcrops_cabbage_silver_star",
+        "item_model": "customcrops:item/cabbage_silver_star",
+        "custom_model_data": 10022,
+        "model": "customcrops:item/cabbage_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Cabbage Golden Star",
+        "bedrock_identifier": "customcrops:cabbage_golden_star",
+        "display_name": "Cabbage Golden Star",
+        "icon": "customcrops_cabbage_golden_star",
+        "item_model": "customcrops:item/cabbage_golden_star",
+        "custom_model_data": 10023,
+        "model": "customcrops:item/cabbage_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Chili",
+        "bedrock_identifier": "customcrops:chili",
+        "display_name": "Chili",
+        "icon": "customcrops_chili",
+        "item_model": "customcrops:item/chili",
+        "custom_model_data": 10024,
+        "model": "customcrops:item/chili",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Chili Silver Star",
+        "bedrock_identifier": "customcrops:chili_silver_star",
+        "display_name": "Chili Silver Star",
+        "icon": "customcrops_chili_silver_star",
+        "item_model": "customcrops:item/chili_silver_star",
+        "custom_model_data": 10025,
+        "model": "customcrops:item/chili_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Chili Golden Star",
+        "bedrock_identifier": "customcrops:chili_golden_star",
+        "display_name": "Chili Golden Star",
+        "icon": "customcrops_chili_golden_star",
+        "item_model": "customcrops:item/chili_golden_star",
+        "custom_model_data": 10026,
+        "model": "customcrops:item/chili_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pumpkin",
+        "bedrock_identifier": "customcrops:pumpkin",
+        "display_name": "Pumpkin",
+        "icon": "customcrops_pumpkin",
+        "item_model": "customcrops:item/pumpkin",
+        "custom_model_data": 10027,
+        "model": "customcrops:item/pumpkin",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pumpkin Silver Star",
+        "bedrock_identifier": "customcrops:pumpkin_silver_star",
+        "display_name": "Pumpkin Silver Star",
+        "icon": "customcrops_pumpkin_silver_star",
+        "item_model": "customcrops:item/pumpkin_silver_star",
+        "custom_model_data": 10028,
+        "model": "customcrops:item/pumpkin_silver_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pumpkin Golden Star",
+        "bedrock_identifier": "customcrops:pumpkin_golden_star",
+        "display_name": "Pumpkin Golden Star",
+        "icon": "customcrops_pumpkin_golden_star",
+        "item_model": "customcrops:item/pumpkin_golden_star",
+        "custom_model_data": 10029,
+        "model": "customcrops:item/pumpkin_golden_star",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      }
+    ],
+    "minecraft:paper": [
+      {
+        "name": "Strawberry Seeds",
+        "bedrock_identifier": "customcrops:strawberry_seeds",
+        "display_name": "Strawberry Seeds",
+        "icon": "customcrops_strawberry_seeds",
+        "item_model": "customcrops:item/strawberry_seeds",
+        "custom_model_data": 20000,
+        "model": "customcrops:item/strawberry_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Turnip Seeds",
+        "bedrock_identifier": "customcrops:turnip_seeds",
+        "display_name": "Turnip Seeds",
+        "icon": "customcrops_turnip_seeds",
+        "item_model": "customcrops:item/turnip_seeds",
+        "custom_model_data": 20001,
+        "model": "customcrops:item/turnip_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Tomato Seeds",
+        "bedrock_identifier": "customcrops:tomato_seeds",
+        "display_name": "Tomato Seeds",
+        "icon": "customcrops_tomato_seeds",
+        "item_model": "customcrops:item/tomato_seeds",
+        "custom_model_data": 20002,
+        "model": "customcrops:item/tomato_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Corn Seeds",
+        "bedrock_identifier": "customcrops:corn_seeds",
+        "display_name": "Corn Seeds",
+        "icon": "customcrops_corn_seeds",
+        "item_model": "customcrops:item/corn_seeds",
+        "custom_model_data": 20003,
+        "model": "customcrops:item/corn_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Eggplant Seeds",
+        "bedrock_identifier": "customcrops:eggplant_seeds",
+        "display_name": "Eggplant Seeds",
+        "icon": "customcrops_eggplant_seeds",
+        "item_model": "customcrops:item/eggplant_seeds",
+        "custom_model_data": 20004,
+        "model": "customcrops:item/eggplant_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pineapple Seeds",
+        "bedrock_identifier": "customcrops:pineapple_seeds",
+        "display_name": "Pineapple Seeds",
+        "icon": "customcrops_pineapple_seeds",
+        "item_model": "customcrops:item/pineapple_seeds",
+        "custom_model_data": 20005,
+        "model": "customcrops:item/pineapple_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Grape Seeds",
+        "bedrock_identifier": "customcrops:grape_seeds",
+        "display_name": "Grape Seeds",
+        "icon": "customcrops_grape_seeds",
+        "item_model": "customcrops:item/grape_seeds",
+        "custom_model_data": 20006,
+        "model": "customcrops:item/grape_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Cabbage Seeds",
+        "bedrock_identifier": "customcrops:cabbage_seeds",
+        "display_name": "Cabbage Seeds",
+        "icon": "customcrops_cabbage_seeds",
+        "item_model": "customcrops:item/cabbage_seeds",
+        "custom_model_data": 20007,
+        "model": "customcrops:item/cabbage_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Chili Seeds",
+        "bedrock_identifier": "customcrops:chili_seeds",
+        "display_name": "Chili Seeds",
+        "icon": "customcrops_chili_seeds",
+        "item_model": "customcrops:item/chili_seeds",
+        "custom_model_data": 20008,
+        "model": "customcrops:item/chili_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      },
+      {
+        "name": "Pumpkin Seeds",
+        "bedrock_identifier": "customcrops:pumpkin_seeds",
+        "display_name": "Pumpkin Seeds",
+        "icon": "customcrops_pumpkin_seeds",
+        "item_model": "customcrops:item/pumpkin_seeds",
+        "custom_model_data": 20009,
+        "model": "customcrops:item/pumpkin_seeds",
+        "bedrock_item_model": "minecraft:item/generated",
+        "allow_offhand": true
+      }
     ]
   }
 }
