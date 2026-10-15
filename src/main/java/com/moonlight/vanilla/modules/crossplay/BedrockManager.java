@@ -35,6 +35,9 @@ public class BedrockManager {
         }
         if (this.geyserPresent) {
             this.plugin.getLogger().info("[Crossplay] Geyser-Spigot detected! Translating Bedrock protocols to Paper 26.2.");
+            this.deployGeyserMappings();
+        } else {
+            this.deployGeyserMappings();
         }
         if (this.viaVersionPresent || this.viaBackwardsPresent) {
             this.plugin.getLogger().info("[Crossplay] ViaVersion / ViaBackwards active! Legacy Java client backward compatibility enabled (1.8.9 - 1.20.x).");
@@ -99,6 +102,40 @@ public class BedrockManager {
 
     public boolean isGeyserPresent() {
         return this.geyserPresent;
+    }
+
+    public void deployGeyserMappings() {
+        try {
+            java.io.File[] candidateDirs = new java.io.File[] {
+                new java.io.File("plugins/Geyser-Spigot/custom_mappings"),
+                new java.io.File("plugins/Geyser-Paper/custom_mappings"),
+                new java.io.File("plugins/geyser/custom_mappings"),
+                new java.io.File("geyser/custom_mappings")
+            };
+
+            java.io.InputStream in = plugin.getResource("geyser_mappings/moonlight_custom_mappings.json");
+            if (in == null) {
+                in = plugin.getResource("moonlight_custom_mappings.json");
+            }
+            if (in == null) return;
+
+            byte[] data = in.readAllBytes();
+            in.close();
+
+            for (java.io.File dir : candidateDirs) {
+                java.io.File parent = dir.getParentFile();
+                if (parent != null && parent.exists()) {
+                    if (!dir.exists()) {
+                        dir.mkdirs();
+                    }
+                    java.io.File target = new java.io.File(dir, "moonlight_custom_mappings.json");
+                    java.nio.file.Files.write(target.toPath(), data, java.nio.file.StandardOpenOption.CREATE, java.nio.file.StandardOpenOption.TRUNCATE_EXISTING);
+                    this.plugin.getLogger().info("[Crossplay] Deployed Geyser custom mappings to: " + target.getPath());
+                }
+            }
+        } catch (Throwable t) {
+            this.plugin.getLogger().log(java.util.logging.Level.WARNING, "[Crossplay] Note: Could not auto-deploy Geyser mappings: " + t.getMessage());
+        }
     }
 }
 

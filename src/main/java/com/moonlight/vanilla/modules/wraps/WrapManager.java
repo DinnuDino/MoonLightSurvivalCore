@@ -49,18 +49,30 @@ public class WrapManager {
         // 1. Load from wraps.json in jar if available
         try (InputStream in = plugin.getResource("wraps.json")) {
             if (in != null) {
-                List<Map<String, String>> rawList = new Gson().fromJson(
+                List<Map<String, Object>> rawList = new Gson().fromJson(
                         new InputStreamReader(in, StandardCharsets.UTF_8),
-                        new TypeToken<List<Map<String, String>>>() {}.getType()
+                        new TypeToken<List<Map<String, Object>>>() {}.getType()
                 );
-                for (Map<String, String> m : rawList) {
-                    String key = m.get("key");
-                    String name = m.get("name");
-                    String category = m.get("category");
-                    String colorFormat = m.get("color_format");
-                    String model = m.get("model");
-                    String modelName = m.get("model_name");
-                    Wrap wrap = new Wrap(key, name, category, colorFormat, model, modelName, "moonlight.wraps.use." + key);
+                for (Map<String, Object> m : rawList) {
+                    String key = (String) m.get("key");
+                    String name = (String) m.get("name");
+                    String category = (String) m.get("category");
+                    String colorFormat = (String) m.get("color_format");
+                    String tier = (String) m.getOrDefault("tier", "default");
+                    String model = (String) m.get("model");
+                    String modelName = (String) m.get("model_name");
+                    int customModelData = 0;
+                    if (m.containsKey("custom_model_data")) {
+                        Object cmdVal = m.get("custom_model_data");
+                        if (cmdVal instanceof Number) {
+                            customModelData = ((Number) cmdVal).intValue();
+                        } else if (cmdVal != null) {
+                            try {
+                                customModelData = Integer.parseInt(cmdVal.toString());
+                            } catch (Exception ignored) {}
+                        }
+                    }
+                    Wrap wrap = new Wrap(key, name, category, colorFormat, tier, model, modelName, customModelData, "moonlight.wraps.use." + key);
                     wraps.add(wrap);
                     wrapMap.put(key.toLowerCase(Locale.ROOT), wrap);
                 }
@@ -187,18 +199,17 @@ public class WrapManager {
 
         pdc.set(wrapKey, PersistentDataType.STRING, wrap.getKey());
 
-        boolean isBedrock = player != null && plugin.getBedrockManager() != null && plugin.getBedrockManager().isBedrockPlayer(player);
-
-        if (!isBedrock) {
-            // Set 3D item model directly (Paper 1.21.4 native)
+        // Set 3D item model directly (Paper 1.21.4 native)
+        if (wrap.getModelName() != null && !wrap.getModelName().isEmpty()) {
             meta.setItemModel(NamespacedKey.minecraft(wrap.getModelName()));
-            meta.setEnchantmentGlintOverride(null);
-        } else {
-            // Avoid setting 3D item_model which glitches Geyser into purple/black missing cubes.
-            // Bedrock players see clean 2D item image with enchanted glint and colored name!
-            meta.setItemModel(null);
-            meta.setEnchantmentGlintOverride(true);
         }
+
+        // Set CustomModelData for Geyser crossplay and legacy Java clients (1.16 - 1.20.x)
+        if (wrap.getCustomModelData() > 0) {
+            meta.setCustomModelData(wrap.getCustomModelData());
+        }
+
+        meta.setEnchantmentGlintOverride(null);
 
         // Set cool colored display name
         meta.displayName(com.moonlight.vanilla.utils.MessageUtil.format(wrap.getColorFormat()));
@@ -224,8 +235,9 @@ public class WrapManager {
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         boolean hadWrap = pdc.has(wrapKey, PersistentDataType.STRING);
 
-        // Remove 3D item model & glint override
+        // Remove 3D item model, CustomModelData & glint override
         meta.setItemModel(null);
+        meta.setCustomModelData(null);
         meta.setEnchantmentGlintOverride(null);
 
         // Restore original name

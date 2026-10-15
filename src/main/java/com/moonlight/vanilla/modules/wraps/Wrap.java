@@ -8,9 +8,10 @@ public class Wrap {
     private final String tier;
     private final String model;
     private final String modelName;
+    private final int customModelData;
     private final String permission;
 
-    public Wrap(String key, String name, String category, String colorFormat, String tier, String model, String modelName, String permission) {
+    public Wrap(String key, String name, String category, String colorFormat, String tier, String model, String modelName, int customModelData, String permission) {
         this.key = key;
         this.name = name;
         this.category = category != null ? category : "SWORD";
@@ -18,15 +19,20 @@ public class Wrap {
         this.tier = tier != null ? tier : "default";
         this.model = model;
         this.modelName = modelName;
+        this.customModelData = customModelData;
         this.permission = permission != null ? permission : "moonlight.wraps.use." + key;
     }
 
+    public Wrap(String key, String name, String category, String colorFormat, String tier, String model, String modelName, String permission) {
+        this(key, name, category, colorFormat, tier, model, modelName, 0, permission);
+    }
+
     public Wrap(String key, String name, String category, String colorFormat, String model, String modelName, String permission) {
-        this(key, name, category, colorFormat, "default", model, modelName, permission);
+        this(key, name, category, colorFormat, "default", model, modelName, 0, permission);
     }
 
     public Wrap(String key, String name, String model, String modelName, String permission) {
-        this(key, name, "SWORD", name, "default", model, modelName, permission);
+        this(key, name, "SWORD", name, "default", model, modelName, 0, permission);
     }
 
     public String getKey() {
@@ -55,6 +61,10 @@ public class Wrap {
 
     public String getModelName() {
         return modelName;
+    }
+
+    public int getCustomModelData() {
+        return customModelData;
     }
 
     public String getPermission() {
