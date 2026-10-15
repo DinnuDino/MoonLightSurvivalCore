@@ -8271,6 +8271,478 @@
         "custom_model_data": 10132,
         "bedrock_item_model": "minecraft:item/handheld"
       }
+    ],
+    "minecraft:apple": [
+      {
+        "name": "Strawberry",
+        "bedrock_identifier": "customcrops:strawberry",
+        "display_name": "Strawberry",
+        "icon": "customcrops_strawberry",
+        "item_model": "customcrops:item/strawberry",
+        "custom_model_data": 10000
+      },
+      {
+        "name": "Strawberry Silver Star",
+        "bedrock_identifier": "customcrops:strawberry_silver_star",
+        "display_name": "Strawberry Silver Star",
+        "icon": "customcrops_strawberry_silver_star",
+        "item_model": "customcrops:item/strawberry_silver_star",
+        "custom_model_data": 10001
+      },
+      {
+        "name": "Strawberry Golden Star",
+        "bedrock_identifier": "customcrops:strawberry_golden_star",
+        "display_name": "Strawberry Golden Star",
+        "icon": "customcrops_strawberry_golden_star",
+        "item_model": "customcrops:item/strawberry_golden_star",
+        "custom_model_data": 10002
+      },
+      {
+        "name": "Turnip",
+        "bedrock_identifier": "customcrops:turnip",
+        "display_name": "Turnip",
+        "icon": "customcrops_turnip",
+        "item_model": "customcrops:item/turnip",
+        "custom_model_data": 10003
+      },
+      {
+        "name": "Turnip Silver Star",
+        "bedrock_identifier": "customcrops:turnip_silver_star",
+        "display_name": "Turnip Silver Star",
+        "icon": "customcrops_turnip_silver_star",
+        "item_model": "customcrops:item/turnip_silver_star",
+        "custom_model_data": 10004
+      },
+      {
+        "name": "Turnip Golden Star",
+        "bedrock_identifier": "customcrops:turnip_golden_star",
+        "display_name": "Turnip Golden Star",
+        "icon": "customcrops_turnip_golden_star",
+        "item_model": "customcrops:item/turnip_golden_star",
+        "custom_model_data": 10005
+      },
+      {
+        "name": "Tomato",
+        "bedrock_identifier": "customcrops:tomato",
+        "display_name": "Tomato",
+        "icon": "customcrops_tomato",
+        "item_model": "customcrops:item/tomato",
+        "custom_model_data": 10006
+      },
+      {
+        "name": "Tomato Silver Star",
+        "bedrock_identifier": "customcrops:tomato_silver_star",
+        "display_name": "Tomato Silver Star",
+        "icon": "customcrops_tomato_silver_star",
+        "item_model": "customcrops:item/tomato_silver_star",
+        "custom_model_data": 10007
+      },
+      {
+        "name": "Tomato Golden Star",
+        "bedrock_identifier": "customcrops:tomato_golden_star",
+        "display_name": "Tomato Golden Star",
+        "icon": "customcrops_tomato_golden_star",
+        "item_model": "customcrops:item/tomato_golden_star",
+        "custom_model_data": 10008
+      },
+      {
+        "name": "Corn",
+        "bedrock_identifier": "customcrops:corn",
+        "display_name": "Corn",
+        "icon": "customcrops_corn",
+        "item_model": "customcrops:item/corn",
+        "custom_model_data": 10009
+      },
+      {
+        "name": "Corn Silver Star",
+        "bedrock_identifier": "customcrops:corn_silver_star",
+        "display_name": "Corn Silver Star",
+        "icon": "customcrops_corn_silver_star",
+        "item_model": "customcrops:item/corn_silver_star",
+        "custom_model_data": 10010
+      },
+      {
+        "name": "Corn Golden Star",
+        "bedrock_identifier": "customcrops:corn_golden_star",
+        "display_name": "Corn Golden Star",
+        "icon": "customcrops_corn_golden_star",
+        "item_model": "customcrops:item/corn_golden_star",
+        "custom_model_data": 10011
+      },
+      {
+        "name": "Eggplant",
+        "bedrock_identifier": "customcrops:eggplant",
+        "display_name": "Eggplant",
+        "icon": "customcrops_eggplant",
+        "item_model": "customcrops:item/eggplant",
+        "custom_model_data": 10012
+      },
+      {
+        "name": "Eggplant Silver Star",
+        "bedrock_identifier": "customcrops:eggplant_silver_star",
+        "display_name": "Eggplant Silver Star",
+        "icon": "customcrops_eggplant_silver_star",
+        "item_model": "customcrops:item/eggplant_silver_star",
+        "custom_model_data": 10013
+      },
+      {
+        "name": "Eggplant Golden Star",
+        "bedrock_identifier": "customcrops:eggplant_golden_star",
+        "display_name": "Eggplant Golden Star",
+        "icon": "customcrops_eggplant_golden_star",
+        "item_model": "customcrops:item/eggplant_golden_star",
+        "custom_model_data": 10014
+      },
+      {
+        "name": "Pineapple",
+        "bedrock_identifier": "customcrops:pineapple",
+        "display_name": "Pineapple",
+        "icon": "customcrops_pineapple",
+        "item_model": "customcrops:item/pineapple",
+        "custom_model_data": 10015
+      },
+      {
+        "name": "Pineapple Silver Star",
+        "bedrock_identifier": "customcrops:pineapple_silver_star",
+        "display_name": "Pineapple Silver Star",
+        "icon": "customcrops_pineapple_silver_star",
+        "item_model": "customcrops:item/pineapple_silver_star",
+        "custom_model_data": 10016
+      },
+      {
+        "name": "Pineapple Golden Star",
+        "bedrock_identifier": "customcrops:pineapple_golden_star",
+        "display_name": "Pineapple Golden Star",
+        "icon": "customcrops_pineapple_golden_star",
+        "item_model": "customcrops:item/pineapple_golden_star",
+        "custom_model_data": 10017
+      },
+      {
+        "name": "Grape",
+        "bedrock_identifier": "customcrops:grape",
+        "display_name": "Grape",
+        "icon": "customcrops_grape",
+        "item_model": "customcrops:item/grape",
+        "custom_model_data": 10018
+      },
+      {
+        "name": "Grape Silver Star",
+        "bedrock_identifier": "customcrops:grape_silver_star",
+        "display_name": "Grape Silver Star",
+        "icon": "customcrops_grape_silver_star",
+        "item_model": "customcrops:item/grape_silver_star",
+        "custom_model_data": 10019
+      },
+      {
+        "name": "Grape Golden Star",
+        "bedrock_identifier": "customcrops:grape_golden_star",
+        "display_name": "Grape Golden Star",
+        "icon": "customcrops_grape_golden_star",
+        "item_model": "customcrops:item/grape_golden_star",
+        "custom_model_data": 10020
+      },
+      {
+        "name": "Cabbage",
+        "bedrock_identifier": "customcrops:cabbage",
+        "display_name": "Cabbage",
+        "icon": "customcrops_cabbage",
+        "item_model": "customcrops:item/cabbage",
+        "custom_model_data": 10021
+      },
+      {
+        "name": "Cabbage Silver Star",
+        "bedrock_identifier": "customcrops:cabbage_silver_star",
+        "display_name": "Cabbage Silver Star",
+        "icon": "customcrops_cabbage_silver_star",
+        "item_model": "customcrops:item/cabbage_silver_star",
+        "custom_model_data": 10022
+      },
+      {
+        "name": "Cabbage Golden Star",
+        "bedrock_identifier": "customcrops:cabbage_golden_star",
+        "display_name": "Cabbage Golden Star",
+        "icon": "customcrops_cabbage_golden_star",
+        "item_model": "customcrops:item/cabbage_golden_star",
+        "custom_model_data": 10023
+      },
+      {
+        "name": "Chili",
+        "bedrock_identifier": "customcrops:chili",
+        "display_name": "Chili",
+        "icon": "customcrops_chili",
+        "item_model": "customcrops:item/chili",
+        "custom_model_data": 10024
+      },
+      {
+        "name": "Chili Silver Star",
+        "bedrock_identifier": "customcrops:chili_silver_star",
+        "display_name": "Chili Silver Star",
+        "icon": "customcrops_chili_silver_star",
+        "item_model": "customcrops:item/chili_silver_star",
+        "custom_model_data": 10025
+      },
+      {
+        "name": "Chili Golden Star",
+        "bedrock_identifier": "customcrops:chili_golden_star",
+        "display_name": "Chili Golden Star",
+        "icon": "customcrops_chili_golden_star",
+        "item_model": "customcrops:item/chili_golden_star",
+        "custom_model_data": 10026
+      },
+      {
+        "name": "Pumpkin",
+        "bedrock_identifier": "customcrops:pumpkin",
+        "display_name": "Pumpkin",
+        "icon": "customcrops_pumpkin",
+        "item_model": "customcrops:item/pumpkin",
+        "custom_model_data": 10027
+      },
+      {
+        "name": "Pumpkin Silver Star",
+        "bedrock_identifier": "customcrops:pumpkin_silver_star",
+        "display_name": "Pumpkin Silver Star",
+        "icon": "customcrops_pumpkin_silver_star",
+        "item_model": "customcrops:item/pumpkin_silver_star",
+        "custom_model_data": 10028
+      },
+      {
+        "name": "Pumpkin Golden Star",
+        "bedrock_identifier": "customcrops:pumpkin_golden_star",
+        "display_name": "Pumpkin Golden Star",
+        "icon": "customcrops_pumpkin_golden_star",
+        "item_model": "customcrops:item/pumpkin_golden_star",
+        "custom_model_data": 10029
+      }
+    ],
+    "minecraft:paper": [
+      {
+        "name": "Strawberry Seeds",
+        "bedrock_identifier": "customcrops:strawberry_seeds",
+        "display_name": "Strawberry Seeds",
+        "icon": "customcrops_strawberry_seeds",
+        "item_model": "customcrops:item/strawberry_seeds",
+        "custom_model_data": 20000
+      },
+      {
+        "name": "Turnip Seeds",
+        "bedrock_identifier": "customcrops:turnip_seeds",
+        "display_name": "Turnip Seeds",
+        "icon": "customcrops_turnip_seeds",
+        "item_model": "customcrops:item/turnip_seeds",
+        "custom_model_data": 20001
+      },
+      {
+        "name": "Tomato Seeds",
+        "bedrock_identifier": "customcrops:tomato_seeds",
+        "display_name": "Tomato Seeds",
+        "icon": "customcrops_tomato_seeds",
+        "item_model": "customcrops:item/tomato_seeds",
+        "custom_model_data": 20002
+      },
+      {
+        "name": "Corn Seeds",
+        "bedrock_identifier": "customcrops:corn_seeds",
+        "display_name": "Corn Seeds",
+        "icon": "customcrops_corn_seeds",
+        "item_model": "customcrops:item/corn_seeds",
+        "custom_model_data": 20003
+      },
+      {
+        "name": "Eggplant Seeds",
+        "bedrock_identifier": "customcrops:eggplant_seeds",
+        "display_name": "Eggplant Seeds",
+        "icon": "customcrops_eggplant_seeds",
+        "item_model": "customcrops:item/eggplant_seeds",
+        "custom_model_data": 20004
+      },
+      {
+        "name": "Pineapple Seeds",
+        "bedrock_identifier": "customcrops:pineapple_seeds",
+        "display_name": "Pineapple Seeds",
+        "icon": "customcrops_pineapple_seeds",
+        "item_model": "customcrops:item/pineapple_seeds",
+        "custom_model_data": 20005
+      },
+      {
+        "name": "Grape Seeds",
+        "bedrock_identifier": "customcrops:grape_seeds",
+        "display_name": "Grape Seeds",
+        "icon": "customcrops_grape_seeds",
+        "item_model": "customcrops:item/grape_seeds",
+        "custom_model_data": 20006
+      },
+      {
+        "name": "Cabbage Seeds",
+        "bedrock_identifier": "customcrops:cabbage_seeds",
+        "display_name": "Cabbage Seeds",
+        "icon": "customcrops_cabbage_seeds",
+        "item_model": "customcrops:item/cabbage_seeds",
+        "custom_model_data": 20007
+      },
+      {
+        "name": "Chili Seeds",
+        "bedrock_identifier": "customcrops:chili_seeds",
+        "display_name": "Chili Seeds",
+        "icon": "customcrops_chili_seeds",
+        "item_model": "customcrops:item/chili_seeds",
+        "custom_model_data": 20008
+      },
+      {
+        "name": "Pumpkin Seeds",
+        "bedrock_identifier": "customcrops:pumpkin_seeds",
+        "display_name": "Pumpkin Seeds",
+        "icon": "customcrops_pumpkin_seeds",
+        "item_model": "customcrops:item/pumpkin_seeds",
+        "custom_model_data": 20009
+      }
+    ],
+    "minecraft:arrow": [
+      {
+        "name": "Next Page 0",
+        "bedrock_identifier": "customcrops_gui:next_page_0",
+        "display_name": "Next Page 0",
+        "icon": "customcrops_gui_next_page_0",
+        "item_model": "item/custom/gui/next_page_0",
+        "custom_model_data": 1000
+      },
+      {
+        "name": "Next Page 1",
+        "bedrock_identifier": "customcrops_gui:next_page_1",
+        "display_name": "Next Page 1",
+        "icon": "customcrops_gui_next_page_1",
+        "item_model": "item/custom/gui/next_page_1",
+        "custom_model_data": 1001
+      },
+      {
+        "name": "Previous Page 0",
+        "bedrock_identifier": "customcrops_gui:previous_page_0",
+        "display_name": "Previous Page 0",
+        "icon": "customcrops_gui_previous_page_0",
+        "item_model": "item/custom/gui/previous_page_0",
+        "custom_model_data": 1002
+      },
+      {
+        "name": "Previous Page 1",
+        "bedrock_identifier": "customcrops_gui:previous_page_1",
+        "display_name": "Previous Page 1",
+        "icon": "customcrops_gui_previous_page_1",
+        "item_model": "item/custom/gui/previous_page_1",
+        "custom_model_data": 1003
+      },
+      {
+        "name": "Return",
+        "bedrock_identifier": "customcrops_gui:return",
+        "display_name": "Return",
+        "icon": "customcrops_gui_return",
+        "item_model": "item/custom/gui/return",
+        "custom_model_data": 1004
+      },
+      {
+        "name": "Get Item",
+        "bedrock_identifier": "customcrops_gui:get_item",
+        "display_name": "Get Item",
+        "icon": "customcrops_gui_get_item",
+        "item_model": "item/custom/gui/get_item",
+        "custom_model_data": 1005
+      },
+      {
+        "name": "Cooking Info",
+        "bedrock_identifier": "customcrops_gui:cooking_info",
+        "display_name": "Cooking Info",
+        "icon": "customcrops_gui_cooking_info",
+        "item_model": "item/custom/gui/cooking_info",
+        "custom_model_data": 1006
+      },
+      {
+        "name": "Exit",
+        "bedrock_identifier": "customcrops_gui:exit",
+        "display_name": "Exit",
+        "icon": "customcrops_gui_exit",
+        "item_model": "item/custom/gui/exit",
+        "custom_model_data": 1007
+      }
+    ],
+    "minecraft:nether_brick": [
+      {
+        "name": "Destroy Stage 1",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_1",
+        "display_name": "Destroy Stage 1",
+        "icon": "customcrops_destroy_destroy_stage_1",
+        "item_model": "item/custom/destroy_stage_1",
+        "custom_model_data": 10062
+      },
+      {
+        "name": "Destroy Stage 0",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_0",
+        "display_name": "Destroy Stage 0",
+        "icon": "customcrops_destroy_destroy_stage_0",
+        "item_model": "item/custom/destroy_stage_0",
+        "custom_model_data": 10063
+      },
+      {
+        "name": "Destroy Stage 3",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_3",
+        "display_name": "Destroy Stage 3",
+        "icon": "customcrops_destroy_destroy_stage_3",
+        "item_model": "item/custom/destroy_stage_3",
+        "custom_model_data": 10064
+      },
+      {
+        "name": "Destroy Stage 2",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_2",
+        "display_name": "Destroy Stage 2",
+        "icon": "customcrops_destroy_destroy_stage_2",
+        "item_model": "item/custom/destroy_stage_2",
+        "custom_model_data": 10065
+      },
+      {
+        "name": "Destroy Stage 5",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_5",
+        "display_name": "Destroy Stage 5",
+        "icon": "customcrops_destroy_destroy_stage_5",
+        "item_model": "item/custom/destroy_stage_5",
+        "custom_model_data": 10066
+      },
+      {
+        "name": "Destroy Stage 4",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_4",
+        "display_name": "Destroy Stage 4",
+        "icon": "customcrops_destroy_destroy_stage_4",
+        "item_model": "item/custom/destroy_stage_4",
+        "custom_model_data": 10067
+      },
+      {
+        "name": "Destroy Stage 7",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_7",
+        "display_name": "Destroy Stage 7",
+        "icon": "customcrops_destroy_destroy_stage_7",
+        "item_model": "item/custom/destroy_stage_7",
+        "custom_model_data": 10068
+      },
+      {
+        "name": "Destroy Stage 6",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_6",
+        "display_name": "Destroy Stage 6",
+        "icon": "customcrops_destroy_destroy_stage_6",
+        "item_model": "item/custom/destroy_stage_6",
+        "custom_model_data": 10069
+      },
+      {
+        "name": "Destroy Stage 9",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_9",
+        "display_name": "Destroy Stage 9",
+        "icon": "customcrops_destroy_destroy_stage_9",
+        "item_model": "item/custom/destroy_stage_9",
+        "custom_model_data": 10070
+      },
+      {
+        "name": "Destroy Stage 8",
+        "bedrock_identifier": "customcrops_destroy:destroy_stage_8",
+        "display_name": "Destroy Stage 8",
+        "icon": "customcrops_destroy_destroy_stage_8",
+        "item_model": "item/custom/destroy_stage_8",
+        "custom_model_data": 10071
+      }
     ]
   }
 }
