@@ -85,7 +85,7 @@ resource-pack:
   enabled: true
   url: "https://cdn.minepack.fr/pack/b3edc890-ab27-48d8-83bb-27f23d503b1d"
   # 40-character SHA-1 checksum matching hosted pack for instant client caching
-  hash: "85b08b308d924c35b33d0434827ac29669d30ac7"
+  hash: "78993c64e02d3e2bea74ce9ef8ee51dd3bc1a6e9"
   required: false
   # Delay in ticks before sending pack prompt (50 ticks = 2.5s allows mobile launchers to finish terrain load)
   send-delay-ticks: 50
